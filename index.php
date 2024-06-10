@@ -60,7 +60,7 @@
                 <div class="icon">
                   <i class="ion ion-bag"></i>
                 </div>
-                <a href="A_laryhup.php" class="small-box-footer">ເບິ່ງທັງໝົດa <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="A_laryhup.php" class="small-box-footer">ເບິ່ງທັງໝົດab <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
