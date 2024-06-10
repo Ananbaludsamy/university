@@ -47,7 +47,119 @@
       <!-- /.content-header -->
       <!-- Main content -->
       <section class="content">
-        
+        <div class="container-fluid">
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">ຈັດການຂໍ້ມູນ ນັກຮຽນ</h3>
+            </div>
+            <form method="POST">
+              <div class="card-body">
+                <div class="form-row">
+                  <div class="col">
+                    <label for="name">ລະຫັດ</label>
+                    <input type="text" name="name" class="form-control" placeholder="">
+                  </div>
+                  <div class="col">
+                    <label for="name">ຊື່</label>
+                    <input type="text" name="name" class="form-control" placeholder="ປ່ອນລາຍຊື່">
+                  </div>
+                </div>
+                <br>
+                <div class="form-row">
+                  <div class="col">
+                    <label for="name">ນາມສະກຸນ</label>
+                    <input type="text" name="name" class="form-control" placeholder="ປ່ອນນາມສະກຸນ">
+                  </div>
+                  <div class="col">
+                    <label for="name">ເພດ</label>
+                    <input type="text" name="name" class="form-control" placeholder="ປ່ອນເພດ">
+                  </div>
+                </div>
+                <br>
+                <div class="form-row">
+                  <div class="col">
+                    <label for="name">ວັນເດືອນປີເກີດ</label>
+                    <input type="text" name="name" class="form-control" placeholder="ປ່ອນວິຊາສອນ">
+                  </div>
+                  <div class="col">
+                    <label for="name">ຊົນເຜົ່າ</label>
+                    <input type="text" name="name" class="form-control" placeholder="ປ່ອນເບີໂທ">
+                  </div>
+                </div>
+                <br>
+                <div class="form-row">
+                  <div class="col-4">
+                    <label for="name">ສາສະໜາ</label>
+                    <input type="text" name="name" class="form-control" placeholder="ປ່ອນຕຳແໜ່ງ">
+                  </div>
+                </div>
+                <br>
+                <div class="form-row">
+                  <div class="col">
+                    <label for="name">ບ້ານ</label>
+                    <input type="text" name="name" class="form-control" placeholder="ບ້ານ">
+                  </div>
+                  <div class="col">
+                    <label for="name">ເມືອງ</label>
+                    <input type="text" name="name" class="form-control" placeholder="ເມືອງ">
+                  </div>
+                  <div class="col">
+                    <label for="name">ແຂວງ</label>
+                    <input type="text" name="name" class="form-control" placeholder="ແຂວງ">
+                  </div>
+                </div>
+                <br>
+              </div>
+              <div class="card-footer">
+                <button type="submit" name="insert" id="insert" class="btn btn-primary">ແກ້ໄຂ</button>
+                <button type="submit" name="insert" id="insert" class="btn btn-primary">ລຶບ</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <form method="post">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">ຕາຕະລາງນັກຮຽນ</h3>
+                  </div>
+                  <div class="card-body">
+                    <table id="example2" class="table table-bordered table-hover">
+                      <thead>
+                        <tr>
+                          <th>ລະຫັດ</th>
+                          <th>ຊື່</th>
+                          <th>ນາມສະກຸນ</th>
+                          <th>ເພດ</th>
+                          <th>ວັນເດືອນປີເກີດ</th>
+                          <th>ຊົນເຜົ່າ</th>
+                          <th>ສາສະໜາ</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th>ລະຫັດ</th>
+                          <th>ຊື່</th>
+                          <th>ນາມສະກຸນ</th>
+                          <th>ເພດ</th>
+                          <th>ວັນເດືອນປີເກີດ</th>
+                          <th>ຊົນເຜົ່າ</th>
+                          <th>ສາສະໜາ</th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
       </section>
     </div>
     <!-- /.content-wrapper -->
