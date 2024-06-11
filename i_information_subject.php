@@ -39,7 +39,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0" style="font-weight: bold;">ນັກຮຽນໃຫມ່</h1>
+              <h1 class="m-0" style="font-weight: bold;">ຂໍ້ມູນວິຊາຮຽນ</h1>
             </div><!-- /.col -->
           </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -47,7 +47,75 @@
       <!-- /.content-header -->
       <!-- Main content -->
       <section class="content">
-        
+        <div class="container-fluid">
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">ຈັດການຂໍ້ມູນ ວິຊາຮຽນ</h3>
+            </div>
+            <form method="POST">
+              <div class="card-body">
+                <div class="form-row">
+                  <div class="col">
+                    <label for="name">ຄົ້ນຫາ</label>
+                    <input type="text" name="name" class="form-control" placeholder="">
+                  </div>
+                  <div class="col">
+                    <label for="name">ຊື່ວິຊາ</label>
+                    <input type="text" name="name" class="form-control" placeholder="ປ່ອນລາຍຊື່">
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <button type="submit" name="insert" id="insert" class="btn btn-primary">ເພິ່ມ</button>
+                <button type="submit" name="insert" id="insert" class="btn btn-primary">ແກ້ໄຂ</button>
+                <button type="submit" name="insert" id="insert" class="btn btn-primary">ລຶບ</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <form method="post">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">ຕາຕະລາງວິຊາຮຽນ</h3>
+                  </div>
+                  <div class="card-body">
+                    <table id="example2" class="table table-bordered table-hover">
+                      <thead>
+                        <tr>
+                          <th>ລະຫັດ</th>
+                          <th>ຊື່</th>
+                          <th>ນາມສະກຸນ</th>
+                          <th>ເພດ</th>
+                          <th>ວັນເດືອນປີເກີດ</th>
+                          <th>ຊົນເຜົ່າ</th>
+                          <th>ສາສະໜາ</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th>ລະຫັດ</th>
+                          <th>ຊື່</th>
+                          <th>ນາມສະກຸນ</th>
+                          <th>ເພດ</th>
+                          <th>ວັນເດືອນປີເກີດ</th>
+                          <th>ຊົນເຜົ່າ</th>
+                          <th>ສາສະໜາ</th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
       </section>
     </div>
     <!-- /.content-wrapper -->
