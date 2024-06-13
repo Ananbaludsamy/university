@@ -84,11 +84,11 @@
                     <label for="">ເພດ</label>
                   </div>
                   <div class="col-1">
-                    <input class="form-check-input" type="radio" name="radio1">
+                    <input class="form-check-input" type="radio" value="ຍິງ" name="stsex">
                     <label class="form-check-label">ຍິງ</label>
                   </div>
                   <div class="col-1">
-                    <input class="form-check-input" type="radio" name="radio1">
+                    <input class="form-check-input" type="radio" value="ຊາຍ" name="stsex">
                     <label class="form-check-label">ຊາຍ</label>
                   </div>
                 </div>

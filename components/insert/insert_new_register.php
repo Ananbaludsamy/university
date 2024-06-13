@@ -12,6 +12,7 @@ if (isset($_POST['insert'])) {
         $stid = $_POST['stid'];
         $stname =  $_POST['stname'];
         $stsurname = $_POST['stsurname'];
+        $stsex = $_POST['stsex'];
         $stdob = $_POST['stdob'];
         $stvillage = $_POST['stvillage'];
         $stdistrict =  $_POST['stdistrict'];
@@ -22,7 +23,7 @@ if (isset($_POST['insert'])) {
         $yearid =  $_POST['yearid'];
         $stphone = $_POST['stphone'];
         $status = "ຍັງ";
-        $sql = "INSERT INTO studenttb (stid, stname, stsurname, stdob, stvillage, stdistrict, stprovince, streligion, sttribe, classid, yearid, status, stphone) VALUES ('$stid', '$stname', '$stsurname', '$stdob', '$stvillage', '$stdistrict', '$stprovince', '$streligion', '$sttribe', '$classid', '$yearid', '$status', '$stphone')";
+        $sql = "INSERT INTO studenttb (stid, stname, stsurname, stsex, stdob, stvillage, stdistrict, stprovince, streligion, sttribe, classid, yearid, status, stphone) VALUES ('$stid', '$stname', '$stsurname', '$stsex', '$stdob', '$stvillage', '$stdistrict', '$stprovince', '$streligion', '$sttribe', '$classid', '$yearid', '$status', '$stphone')";
         if ($conn->query($sql) === TRUE) {
         ?>
             <script>
@@ -51,4 +52,3 @@ if (isset($_POST['insert'])) {
     }
 }
 ?>
-<script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
