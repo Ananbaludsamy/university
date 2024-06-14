@@ -14,8 +14,6 @@
   <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-  <link rel="stylesheet" href="plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
-  <link rel="stylesheet" href="plugins/sweetalert2/sweetalert2.min.css">
 </head>
 <style>
   @media (max-width: 767.98px) {
@@ -67,7 +65,7 @@
                 <br>
                 <div class="form-row">
                   <div class="col">
-                    <label for="stname">ຊື່</label>
+                    <label for="stname1">ຊື່</label>
                     <input type="text" name="stname" class="form-control" placeholder="ປ່ອນລາຍຊື່">
                   </div>
                   <div class="col">
@@ -86,11 +84,11 @@
                     <label for="">ເພດ</label>
                   </div>
                   <div class="col-1">
-                    <input class="form-check-input" type="radio" name="radio1">
+                    <input class="form-check-input" type="radio" value="ຍິງ" name="stsex">
                     <label class="form-check-label">ຍິງ</label>
                   </div>
                   <div class="col-1">
-                    <input class="form-check-input" type="radio" name="radio1">
+                    <input class="form-check-input" type="radio" value="ຊາຍ" name="stsex">
                     <label class="form-check-label">ຊາຍ</label>
                   </div>
                 </div>
@@ -125,7 +123,7 @@
                 <div class="form-row">
                   <div class="col">
                     <label>ຫ້ອງຮຽນ</label>
-                    <select name="select_option" id="select_option" class="form-control select2bs4" style="width: 100%;">
+                    <select name="classid" id="classid" class="form-control select2bs4" style="width: 100%;">
                       <?php
                       include "conn.php";
                       // SQL query เพื่อดึงข้อมูล
@@ -136,7 +134,7 @@
                       if ($result->num_rows > 0) {
                         // วนลูปและแสดงผลลัพธ์เป็น options
                         while ($row = $result->fetch_assoc()) {
-                          echo "<option value='". $row['classid'] ."'>" . $row['classname'] . "</option>";
+                          echo "<option value='" . $row['classid'] . "'>" . $row['classname'] . "</option>";
                         }
                       } else {
                         echo "0 results";
@@ -148,6 +146,7 @@
                     <label for="stphone">ເບີໂທ</label>
                     <input type="text" name="stphone" class="form-control" placeholder="ປ່ອນເບີໂທ">
                   </div>
+                  <?php include "components/insert/insert_new_register.php" ?>
                 </div>
               </div>
               <div class="card-footer">
@@ -159,7 +158,7 @@
       </section>
     </div>
     <!-- /.content-wrapper -->
-    <?php include "components/footer.php"  ?>
+    <?php include "components/footer.php" ?>
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
       <!-- Control sidebar content goes here -->
@@ -167,7 +166,10 @@
     <!-- /.control-sidebar -->
   </div>
   <!-- ./wrapper -->
-
+  <script>
+    $.widget.bridge('uibutton', $.ui.button)
+    //create function
+  </script>
   <script src="plugins/jquery/jquery.min.js"></script>
   <script src="plugins/jquery/jquery.min"></script>
   <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -175,7 +177,7 @@
   <script src="dist/js/adminlte.js"></script>
   <script src="dist/js/alert.js"></script>
   <script src="dist/js/pages/dashboard.js"></script>
-  <script src="plugins/sweetalert2/sweetalert2.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="plugins/toastr/toastr.min.js"></script>
   <script src="plugins/datatables/jquery.dataTables.min.js"></script>
   <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
