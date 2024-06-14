@@ -56,19 +56,19 @@
               <div class="card-body">
                 <div class="form-row">
                   <div class="col">
-                    <label for="name">id</label>
-                    <input type="text" name="name" class="form-control" placeholder="">
+                    <label for="emid">id</label>
+                    <input type="text" name="emid" class="form-control" placeholder="">
                   </div>
                   <div class="col">
-                    <label for="name">ຊື່</label>
-                    <input type="text" name="name" class="form-control" placeholder="ປ່ອນລາຍຊື່">
+                    <label for="emname">ຊື່</label>
+                    <input type="text" name="emname" class="form-control" placeholder="ປ່ອນລາຍຊື່">
                   </div>
                 </div>
                 <br>
                 <div class="form-row">
                   <div class="col">
-                    <label for="name">ນາມສະກຸນ</label>
-                    <input type="text" name="name" class="form-control" placeholder="ປ່ອນນາມສະກຸນ">
+                    <label for="emsurname">ນາມສະກຸນ</label>
+                    <input type="text" name="emsurname" class="form-control" placeholder="ປ່ອນນາມສະກຸນ">
                   </div>
                   <div class="col">
                     <label for="name">ເພດ</label>
