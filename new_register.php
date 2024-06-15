@@ -124,21 +124,9 @@
                   <div class="col">
                     <label>ຫ້ອງຮຽນ</label>
                     <select name="classid" id="classid" class="form-control select2bs4" style="width: 100%;">
+                      <option value="----****----">-----ເລືອກລາຍການ-----</option>
                       <?php
-                      include "conn.php";
-                      // SQL query เพื่อดึงข้อมูล
-                      $sql = "SELECT classid, classname FROM classtb";
-                      $result = $conn->query($sql);
-
-                      // ตรวจสอบว่ามีข้อมูลหรือไม่
-                      if ($result->num_rows > 0) {
-                        // วนลูปและแสดงผลลัพธ์เป็น options
-                        while ($row = $result->fetch_assoc()) {
-                          echo "<option value='" . $row['classid'] . "'>" . $row['classname'] . "</option>";
-                        }
-                      } else {
-                        echo "0 results";
-                      }
+                      include "components/classroom.php";
                       ?>
                     </select>
                   </div>
@@ -146,7 +134,22 @@
                     <label for="stphone">ເບີໂທ</label>
                     <input type="text" name="stphone" class="form-control" placeholder="ປ່ອນເບີໂທ">
                   </div>
-                  <?php include "components/insert/insert_new_register.php" ?>
+                  <?php include "components/insert/insert_new_register.php"?>
+                </div>
+                <br>
+                <div class="form-row">
+                  <div class="col">
+                    <label for="status">ສະຖານະການຈ່າຍ</label>
+                    <select name="status" id="status" class="form-control select2bs4" style="width: 100%;">
+                      <option value="----****----">-----ເລືອກລາຍການ-----</option>
+                      <option value="ຍັງ">ຍັງ</option>
+                      <option value="ຈ່າຍແລ້ວ">ຈ່າຍແລ້ວ</option>
+                    </select>
+                  </div>
+                  <div class="col">
+                    <label for="sttotal">ຈຳນວນ</label>
+                    <input type="text" name="sttotal" class="form-control" placeholder="ປ່ອນຈຳນວນເງິນ">
+                  </div>
                 </div>
               </div>
               <div class="card-footer">
@@ -155,6 +158,92 @@
             </form>
           </div>
         </div>
+        <form method="post">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">ຕາຕະລາງນັກຮຽນ</h3>
+                  </div>
+                  <div class="card-body">
+                    <table id="example2" class="table table-bordered table-hover">
+                      <thead>
+                        <tr>
+                          <th>ລະຫັດ</th>
+                          <th>ຊື່</th>
+                          <th>ນາມສະກຸນ</th>
+                          <th>ເພດ</th>
+                          <th>ວັນເດືອນປີເກີດ</th>
+                          <th>ຊົນເຜົ່າ</th>
+                          <th>ສາສະໜາ</th>
+                          <th>ສາສະໜາ</th>
+                          <th>ລະຫັດ</th>
+                          <th>ຊື່</th>
+                          <th>ນາມສະກຸນ</th>
+                          <th>ເພດ</th>
+                          <th>ວັນເດືອນປີເກີດ</th>
+                          <th>ຊົນເຜົ່າ</th>
+                          <th>ສາສະໜາ</th>
+                          <th>ສາສະໜາ</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php
+                        include "conn.php";
+                        $sql = "SELECT * FROM studenttb INNER JOIN classtb ON studenttb.classid=classtb.classid;";
+                        $result = $conn->query($sql);
+                        while ($row = $result->fetch_assoc()) {
+                        ?>
+                          <tr>
+                            <td><?php echo $row['stid'] ?></td>
+                            <td><?php echo $row['stname'] ?></td>
+                            <td><?php echo $row['stsurname'] ?></td>
+                            <td><?php echo $row['stsex'] ?></td>
+                            <td><?php echo $row['stdob'] ?></td>
+                            <td><?php echo $row['stvillage'] ?></td>
+                            <td><?php echo $row['stdistrict'] ?></td>
+                            <td><?php echo $row['stprovince'] ?></td>
+                            <td><?php echo $row['streligion'] ?></td>
+                            <td><?php echo $row['sttribe'] ?></td>
+                            <td><?php echo $row['classname'] ?></td>
+                            <td><?php echo $row['yearid'] ?></td>
+                            <td><?php echo $row['status'] ?></td>
+                            <td><?php echo $row['stphone'] ?></td>
+                            <td><?php echo $row['stposition'] ?></td>
+                            <td><?php echo $row['sttotal'] ?></td>
+                          </tr>
+                        <?php
+                        }
+                        ?>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th>ລະຫັດ</th>
+                          <th>ຊື່</th>
+                          <th>ນາມສະກຸນ</th>
+                          <th>ເພດ</th>
+                          <th>ວັນເດືອນປີເກີດ</th>
+                          <th>ຊົນເຜົ່າ</th>
+                          <th>ສາສະໜາ</th>
+                          <th>ສາສະໜາ</th>
+                          <th>ລະຫັດ</th>
+                          <th>ຊື່</th>
+                          <th>ນາມສະກຸນ</th>
+                          <th>ເພດ</th>
+                          <th>ວັນເດືອນປີເກີດ</th>
+                          <th>ຊົນເຜົ່າ</th>
+                          <th>ສາສະໜາ</th>
+                          <th>ສາສະໜາ</th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
       </section>
     </div>
     <!-- /.content-wrapper -->
@@ -177,7 +266,6 @@
   <script src="dist/js/adminlte.js"></script>
   <script src="dist/js/alert.js"></script>
   <script src="dist/js/pages/dashboard.js"></script>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="plugins/toastr/toastr.min.js"></script>
   <script src="plugins/datatables/jquery.dataTables.min.js"></script>
   <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>

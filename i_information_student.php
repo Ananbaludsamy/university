@@ -50,69 +50,112 @@
         <div class="container-fluid">
           <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title">ຈັດການຂໍ້ມູນ ນັກຮຽນ</h3>
+              <h3 class="card-title">ປ່ອນຂໍ້ມູນ ນັກສຶກສາໃຫມ່</h3>
             </div>
             <form method="POST">
               <div class="card-body">
                 <div class="form-row">
                   <div class="col">
-                    <label for="name">ລະຫັດ</label>
-                    <input type="text" name="name" class="form-control" placeholder="">
+                    <label for="yearid">ສົກຮຽນ</label>
+                    <input type="text" name="yearid" class="form-control" placeholder="ປ່ອນສົກຮຽນ">
                   </div>
                   <div class="col">
-                    <label for="name">ຊື່</label>
-                    <input type="text" name="name" class="form-control" placeholder="ປ່ອນລາຍຊື່">
+                    <label for="stid">ລະຫັດນັກຮຽນ</label>
+                    <input type="text" name="stid" class="form-control" placeholder="ປ່ອນລະຫັດນັກຮຽນ">
                   </div>
                 </div>
                 <br>
                 <div class="form-row">
                   <div class="col">
-                    <label for="name">ນາມສະກຸນ</label>
-                    <input type="text" name="name" class="form-control" placeholder="ປ່ອນນາມສະກຸນ">
+                    <label for="stname1">ຊື່</label>
+                    <input type="text" name="stname" class="form-control" placeholder="ປ່ອນລາຍຊື່">
                   </div>
                   <div class="col">
-                    <label for="name">ເພດ</label>
-                    <input type="text" name="name" class="form-control" placeholder="ປ່ອນເພດ">
+                    <label for="stsurname">ນາມສະກຸນ</label>
+                    <input type="text" name="stsurname" class="form-control" placeholder="ປ່ອນນາມສະກຸນ">
+                  </div>
+                </div>
+                <br>
+                <div class="form-group">
+                  <label for="stdob">ວັນເດືອນປີເກີດ</label>
+                  <input type="date" name="stdob" class="form-control" placeholder="ວັນທີ-ເດືອນ-ປີ">
+                </div>
+                <br>
+                <div class="form-row">
+                  <div class="col-1">
+                    <label for="">ເພດ</label>
+                  </div>
+                  <div class="col-1">
+                    <input class="form-check-input" type="radio" value="ຍິງ" name="stsex">
+                    <label class="form-check-label">ຍິງ</label>
+                  </div>
+                  <div class="col-1">
+                    <input class="form-check-input" type="radio" value="ຊາຍ" name="stsex">
+                    <label class="form-check-label">ຊາຍ</label>
                   </div>
                 </div>
                 <br>
                 <div class="form-row">
                   <div class="col">
-                    <label for="name">ວັນເດືອນປີເກີດ</label>
-                    <input type="text" name="name" class="form-control" placeholder="ປ່ອນວິຊາສອນ">
+                    <label for="stvillage">ບ້ານ</label>
+                    <input type="text" name="stvillage" class="form-control" placeholder="ປ່ອນບ້ານ">
                   </div>
                   <div class="col">
-                    <label for="name">ຊົນເຜົ່າ</label>
-                    <input type="text" name="name" class="form-control" placeholder="ປ່ອນເບີໂທ">
+                    <label for="stdistrict">ເມືອງ</label>
+                    <input type="text" name="stdistrict" class="form-control" placeholder="ປ່ອນເມືອງ">
+                  </div>
+                  <div class="col">
+                    <label for="stprovince">ແຂວງ
+                    </label>
+                    <input type="text" name="stprovince" class="form-control" placeholder="ປ່ອນແຂວງ">
                   </div>
                 </div>
                 <br>
                 <div class="form-row">
-                  <div class="col-4">
-                    <label for="name">ສາສະໜາ</label>
-                    <input type="text" name="name" class="form-control" placeholder="ປ່ອນຕຳແໜ່ງ">
+                  <div class="col">
+                    <label for="streligion">ສາສະໜາ</label>
+                    <input type="text" name="streligion" class="form-control" placeholder="ປ່ອນສາສະໜາ">
+                  </div>
+                  <div class="col">
+                    <label for="sttribe">ຊົນເຜົ່າ</label>
+                    <input type="text" name="sttribe" class="form-control" placeholder="ປ່ອນຊົນເຜົ່າ">
                   </div>
                 </div>
                 <br>
                 <div class="form-row">
                   <div class="col">
-                    <label for="name">ບ້ານ</label>
-                    <input type="text" name="name" class="form-control" placeholder="ບ້ານ">
+                    <label>ຫ້ອງຮຽນ</label>
+                    <select name="classid" id="classid" class="form-control select2bs4" style="width: 100%;">
+                      <option value="----****----">-----ເລືອກລາຍການ-----</option>
+                      <?php
+                      include "components/classroom.php";
+                      ?>
+                    </select>
                   </div>
                   <div class="col">
-                    <label for="name">ເມືອງ</label>
-                    <input type="text" name="name" class="form-control" placeholder="ເມືອງ">
+                    <label for="stphone">ເບີໂທ</label>
+                    <input type="text" name="stphone" class="form-control" placeholder="ປ່ອນເບີໂທ">
                   </div>
-                  <div class="col">
-                    <label for="name">ແຂວງ</label>
-                    <input type="text" name="name" class="form-control" placeholder="ແຂວງ">
-                  </div>
+                  <?php include "components/insert/insert_new_register.php" ?>
                 </div>
                 <br>
+                <div class="form-row">
+                  <div class="col">
+                    <label for="status">ສະຖານະການຈ່າຍ</label>
+                    <select name="status" id="status" class="form-control select2bs4" style="width: 100%;">
+                      <option value="----****----">-----ເລືອກລາຍການ-----</option>
+                      <option value="ຍັງ">ຍັງ</option>
+                      <option value="ຈ່າຍແລ້ວ">ຈ່າຍແລ້ວ</option>
+                    </select>
+                  </div>
+                  <div class="col">
+                    <label for="sttotal">ຈຳນວນ</label>
+                    <input type="text" name="sttotal" class="form-control" placeholder="ປ່ອນຈຳນວນເງິນ">
+                  </div>
+                </div>
               </div>
               <div class="card-footer">
-                <button type="submit" name="insert" id="insert" class="btn btn-primary">ແກ້ໄຂ</button>
-                <button type="submit" name="insert" id="insert" class="btn btn-primary">ລຶບ</button>
+                <button type="submit" name="insert" id="insert" class="btn btn-primary">ລົງທະບຽນ</button>
               </div>
             </form>
           </div>

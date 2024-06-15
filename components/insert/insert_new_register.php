@@ -2,7 +2,7 @@
 include "conn.php";
 if (isset($_POST['insert'])) {
     if ($_POST['stname'] == null) {
-        echo "<script>alert('ທ່ານຕ້ອງປ່ອນຊື່ ແລະ ນາມສະກຸນກ່ອນ');</script>"; 
+        echo "<script>alert('ທ່ານຕ້ອງປ່ອນຊື່ ແລະ ນາມສະກຸນກ່ອນ');</script>";
     } else {
         /* GET INPUT FROM USER */
         $stid = $_POST['stid'];
@@ -18,16 +18,15 @@ if (isset($_POST['insert'])) {
         $classid = $_POST['classid'];
         $yearid =  $_POST['yearid'];
         $stphone = $_POST['stphone'];
-        $status = "ຍັງ";
-        $sql = "INSERT INTO studenttb (stid, stname, stsurname, stsex, stdob, stvillage, stdistrict, stprovince, streligion, sttribe, classid, yearid, status, stphone) VALUES ('$stid', '$stname', '$stsurname', '$stsex', '$stdob', '$stvillage', '$stdistrict', '$stprovince', '$streligion', '$sttribe', '$classid', '$yearid', '$status', '$stphone')";
+        $status = $_POST['status'];
+        $sttotal = $_POST['sttotal'];
+        $stposition = "ນັກຮຽນ";
+        $sql = "INSERT INTO studenttb (stid, stname, stsurname, stsex, stdob, stvillage, stdistrict, stprovince, streligion, sttribe, classid, yearid, status, stphone, stposition, sttotal) VALUES ('$stid', '$stname', '$stsurname', '$stsex', '$stdob', '$stvillage', '$stdistrict', '$stprovince', '$streligion', '$sttribe', '$classid', '$yearid', '$status', '$stphone', '$stposition', '$sttotal')";
         if ($conn->query($sql) === TRUE) {
-            echo "<script>alert('ທ່ານບັນທຶກຂໍ້ມູນສຳເລັດແລ້ວ');</script>"; 
+            echo "<script>alert('ທ່ານບັນທຶກຂໍ້ມູນສຳເລັດແລ້ວ');</script>";
         } else {
-        ?>
-            echo "<script>alert('ກະລຸນາປ່ອນຂໍ້ມູນໃຫ້ຖືກຕ້ອງ');</script>"; 
-<?php
+            echo "<script>alert('ກະລຸນາປ່ອນຂໍ້ມູນໃຫ້ຖືກຕ້ອງ');</script>";
         }
         $conn->close();
     }
 }
-?>

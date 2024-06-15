@@ -54,25 +54,52 @@
                         </div>
                         <form method="POST">
                             <div class="card-body">
-                                <div class="form-group">
-                                    <label for="date">ສົກຮຽນ</label>
-                                    <input type="text" name="bath" class="form-control" placeholder="ປ່ອນຈຳນວນເງິນບາດ">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label for="stname1">ສົກຮຽນ</label>
+                                        <input type="text" name="stname" class="form-control" placeholder="ປ່ອນລາຍຊື່">
+                                    </div>
+                                    <div class="col">
+                                        <label for="stsurname">ລະຫົັດນັກຮຽນ</label>
+                                        <input type="text" name="stsurname" class="form-control" placeholder="ປ່ອນນາມສະກຸນ">
+                                    </div>
                                 </div>
                                 <br>
-                                <div class="form-group">
-                                    <label for="date">ສົກຮຽນ</label>
-                                    <input type="text" name="bath" class="form-control" placeholder="ປ່ອນຈຳນວນເງິນບາດ">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label for="stname1">ຊື່</label>
+                                        <input type="text" name="stname" class="form-control" placeholder="ປ່ອນລາຍຊື່">
+                                    </div>
+                                    <div class="col">
+                                        <label for="stsurname">ນາມສະກຸນ</label>
+                                        <input type="text" name="stsurname" class="form-control" placeholder="ປ່ອນນາມສະກຸນ">
+                                    </div>
                                 </div>
                                 <br>
-                                <div class="form-group">
-                                    <label>ຫ້ອງຮຽນ</label>
-                                    <select name="select_option" id="select_option" class="form-control select2bs4" style="width: 100%;">
-                                        <option value="">-- Select an option --</option>
-                                        <option value="option1">ຄ່ານ້ຳ</option>
-                                        <option value="option2">ຄ່າໄຟ</option>
-                                        <option value="option3">ຄ່າຂີ້ເຫຍື້ອ</option>
-                                    </select>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>ຫ້ອງຮຽນ</label>
+                                        <select name="classid" id="classid" class="form-control select2bs4" style="width: 100%;">
+                                            <option value="----****----">-----ເລືອກລາຍການ-----</option>
+                                            <?php
+                                            include "components/classroom.php";
+                                            ?>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <label for="status">ສະຖານະການຈ່າຍ</label>
+                                        <select name="status" id="status" class="form-control select2bs4" style="width: 100%;">
+                                            <option value="----****----">-----ເລືອກລາຍການ-----</option>
+                                            <option value="ຍັງ">ຍັງ</option>
+                                            <option value="ຈ່າຍແລ້ວ">ຈ່າຍແລ້ວ</option>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <label for="status">ຈຳນວນ</label>
+                                        <input type="text" name="stsurname" class="form-control">
+                                    </div>
                                 </div>
+                                <br>
                             </div>
                             <div class="card-footer">
                                 <button type="submit" name="insert" id="insert" class="btn btn-primary">ລົງທະບຽນ</button>
