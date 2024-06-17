@@ -83,8 +83,8 @@
                         </ul>
                     </li>
 
-                    <li class="nav-item <?= $page == 'rp_Alaryhup.php' || $page == 'rp_Alaryjay.php' ? 'menu-open' : '' ?>">
-                        <a href="rp_Alaryhup.php" class="nav-link <?= $page == 'rp_Alaryhup.php' || $page == 'rp_Alaryjay.php' ? 'active' : '' ?>">
+                    <li class="nav-item <?= $page == 'classroom.php' ? 'menu-open' : '' ?>">
+                        <a href="classroom.php" class="nav-link <?= $page == 'classroom.php' ? 'active' : '' ?>">
                             <i class="nav-icon fas fa-retweet"></i>
                             <p>
                                 ຫ້ອງຮຽນ
@@ -92,8 +92,8 @@
                         </a>
                     </li>
 
-                    <li class="nav-item <?= $page == 'rp_Alaryhup.php' || $page == 'rp_Alaryjay.php' ? 'menu-open' : '' ?>">
-                        <a href="rp_Alaryhup.php" class="nav-link <?= $page == 'rp_Alaryhup.php' || $page == 'rp_Alaryjay.php' ? 'active' : '' ?>">
+                    <li class="nav-item <?= $page == 'Score.php' ? 'menu-open' : '' ?>">
+                        <a href="Score.php" class="nav-link <?= $page == 'Score.php' ? 'active' : '' ?>">
                             <i class="nav-icon fas fa-retweet"></i>
                             <p>
                                 ຄະແນນ
