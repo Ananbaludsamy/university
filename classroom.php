@@ -23,6 +23,10 @@
   }
 </style>
 
+<!-- php -->
+
+<!-- end php -->
+
 <body class="hold-transition sidebar-mini layout-fixed">
   <div class="wrapper">
     <!-- Preloader -->
@@ -38,6 +42,26 @@
           <div class="row mb-2">
             <div class="col-sm-6">
               <h1 class="m-0" style="font-weight: bold;">ຫ້ອງຮຽນ</h1>
+              <?php
+              include "conn.php";
+              if (isset($_GET['id'])) {
+                $id = $_GET['id']; // สมมติว่า $id มาจาก query string
+                // ป้องกัน SQL Injection
+                $id = $conn->real_escape_string($id);
+                $sql = "SELECT * FROM studenttb INNER JOIN classtb ON studenttb.classid=classtb.classid WHERE classtb.classid = '$id';";
+                $result = $conn->query($sql);
+
+                if ($result) {
+                  // นับจำนวนแถวที่ได้จากการ query
+                  $row_count = $result->num_rows;
+                  echo "Number of students in class $id: " . $row_count;
+                } else {
+                  echo "Error: " . $conn->error;
+                }
+              } else {
+                echo "Class ID not provided.";
+              }
+              ?>
             </div><!-- /.col -->
           </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -126,7 +150,7 @@
                       <tbody>
                         <?php
                         include "conn.php";
-                        $sql = "SELECT * FROM studenttb INNER JOIN classtb ON studenttb.classid=classtb.classid;";
+                        $sql = "SELECT * FROM studenttb INNER JOIN classtb ON studenttb.classid=classtb.classid WHERE classtb.classid = '$id' ";
                         $result = $conn->query($sql);
                         while ($row = $result->fetch_assoc()) {
                         ?>

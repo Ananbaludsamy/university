@@ -83,8 +83,8 @@
                         </ul>
                     </li>
 
-                    <li class="nav-item <?= $page == 'classroom.php' ? 'menu-open' : '' ?>">
-                        <a href="classroom.php" class="nav-link <?= $page == 'classroom.php' ? 'active' : '' ?>">
+                    <li class="nav-item <?= $page == 'main_classroom.php' ? 'menu-open' : '' ?>">
+                        <a href="main_classroom.php" class="nav-link <?= $page == 'main_classroom.php' ? 'active' : '' ?>">
                             <i class="nav-icon fas fa-retweet"></i>
                             <p>
                                 ຫ້ອງຮຽນ
