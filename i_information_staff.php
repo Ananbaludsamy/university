@@ -52,73 +52,7 @@
             <div class="card-header">
               <h3 class="card-title">ປ່ອນຂໍ້ມູນ ພະນັກງານ</h3>
             </div>
-            <form method="POST">
-              <div class="card-body">
-                <div class="form-row">
-                  <div class="col">
-                    <label for="emid">id</label>
-                    <input type="text" name="emid" class="form-control" placeholder="">
-                  </div>
-                  <div class="col">
-                    <label for="emname">ຊື່</label>
-                    <input type="text" name="emname" class="form-control" placeholder="ປ່ອນລາຍຊື່">
-                  </div>
-                </div>
-                <br>
-                <div class="form-row">
-                  <div class="col">
-                    <label for="emsurname">ນາມສະກຸນ</label>
-                    <input type="text" name="emsurname" class="form-control" placeholder="ປ່ອນນາມສະກຸນ">
-                  </div>
-                  <div class="col">
-                    <label for="name">ເພດ</label>
-                    <input type="text" name="name" class="form-control" placeholder="ປ່ອນເພດ">
-                  </div>
-                </div>
-                <br>
-                <div class="form-row">
-                  <div class="col">
-                    <label for="name">ວິຊາສອນ</label>
-                    <input type="text" name="name" class="form-control" placeholder="ປ່ອນວິຊາສອນ">
-                  </div>
-                  <div class="col">
-                    <label for="name">ເບີໂທ</label>
-                    <input type="text" name="name" class="form-control" placeholder="ປ່ອນເບີໂທ">
-                  </div>
-                </div>
-                <br>
-                <div class="form-row">
-                  <div class="col">
-                    <label for="name">ຕຳແໜ່ງ</label>
-                    <input type="text" name="name" class="form-control" placeholder="ປ່ອນຕຳແໜ່ງ">
-                  </div>
-                  <div class="col">
-                    <label for="name">ເງິນເດືອນກີບ</label>
-                    <input type="text" name="name" class="form-control" placeholder="ປ່ອນເງິນເດືອນກີບ">
-                  </div>
-                </div>
-                <br>
-                <div class="form-row">
-                  <div class="col">
-                    <label for="name">ບ້ານ</label>
-                    <input type="text" name="name" class="form-control" placeholder="ບ້ານ">
-                  </div>
-                  <div class="col">
-                    <label for="name">ເມືອງ</label>
-                    <input type="text" name="name" class="form-control" placeholder="ເມືອງ">
-                  </div>
-                  <div class="col">
-                    <label for="name">ແຂວງ</label>
-                    <input type="text" name="name" class="form-control" placeholder="ແຂວງ">
-                  </div>
-                </div>
-                <br>
-              </div>
-              <div class="card-footer">
-                <button type="submit" name="insert" id="insert" class="btn btn-primary">ແກ້ໄຂ</button>
-                <button type="submit" name="insert" id="insert" class="btn btn-primary">ລຶບ</button>
-              </div>
-            </form>
+            
           </div>
         </div>
         <form method="post">
@@ -144,7 +78,6 @@
                           <th>ທີ່ຢູ່</th>
                         </tr>
                       </thead>
-
                       <tbody>
 
                       </tbody>

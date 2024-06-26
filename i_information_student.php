@@ -39,9 +39,10 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0" style="font-weight: bold;">ຂໍ້ມູນນັກຮຽນ</h1>
+              <h1 class="m-0" style="font-weight: bold;">ຂໍ້ມູນນັກສຶກສາ</h1>
             </div><!-- /.col -->
           </div><!-- /.row -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal">ເພິ່ມ</button>
         </div><!-- /.container-fluid -->
       </div>
       <!-- /.content-header -->
@@ -50,163 +51,115 @@
         <div class="container-fluid">
           <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title">ປ່ອນຂໍ້ມູນ ນັກສຶກສາໃຫມ່</h3>
+              <h3 class="card-title">ຂໍ້ມູນ ນັກສຶກສາໃຫມ່</h3>
             </div>
-            <form method="POST">
-              <div class="card-body">
-                <div class="form-row">
-                  <div class="col">
-                    <label for="yearid">ສົກຮຽນ</label>
-                    <input type="text" name="yearid" class="form-control" placeholder="ປ່ອນສົກຮຽນ">
-                  </div>
-                  <div class="col">
-                    <label for="stid">ລະຫັດນັກຮຽນ</label>
-                    <input type="text" name="stid" class="form-control" placeholder="ປ່ອນລະຫັດນັກຮຽນ">
-                  </div>
-                </div>
-                <br>
-                <div class="form-row">
-                  <div class="col">
-                    <label for="stname1">ຊື່</label>
-                    <input type="text" name="stname" class="form-control" placeholder="ປ່ອນລາຍຊື່">
-                  </div>
-                  <div class="col">
-                    <label for="stsurname">ນາມສະກຸນ</label>
-                    <input type="text" name="stsurname" class="form-control" placeholder="ປ່ອນນາມສະກຸນ">
-                  </div>
-                </div>
-                <br>
-                <div class="form-group">
-                  <label for="stdob">ວັນເດືອນປີເກີດ</label>
-                  <input type="date" name="stdob" class="form-control" placeholder="ວັນທີ-ເດືອນ-ປີ">
-                </div>
-                <br>
-                <div class="form-row">
-                  <div class="col-1">
-                    <label for="">ເພດ</label>
-                  </div>
-                  <div class="col-1">
-                    <input class="form-check-input" type="radio" value="ຍິງ" name="stsex">
-                    <label class="form-check-label">ຍິງ</label>
-                  </div>
-                  <div class="col-1">
-                    <input class="form-check-input" type="radio" value="ຊາຍ" name="stsex">
-                    <label class="form-check-label">ຊາຍ</label>
-                  </div>
-                </div>
-                <br>
-                <div class="form-row">
-                  <div class="col">
-                    <label for="stvillage">ບ້ານ</label>
-                    <input type="text" name="stvillage" class="form-control" placeholder="ປ່ອນບ້ານ">
-                  </div>
-                  <div class="col">
-                    <label for="stdistrict">ເມືອງ</label>
-                    <input type="text" name="stdistrict" class="form-control" placeholder="ປ່ອນເມືອງ">
-                  </div>
-                  <div class="col">
-                    <label for="stprovince">ແຂວງ
-                    </label>
-                    <input type="text" name="stprovince" class="form-control" placeholder="ປ່ອນແຂວງ">
-                  </div>
-                </div>
-                <br>
-                <div class="form-row">
-                  <div class="col">
-                    <label for="streligion">ສາສະໜາ</label>
-                    <input type="text" name="streligion" class="form-control" placeholder="ປ່ອນສາສະໜາ">
-                  </div>
-                  <div class="col">
-                    <label for="sttribe">ຊົນເຜົ່າ</label>
-                    <input type="text" name="sttribe" class="form-control" placeholder="ປ່ອນຊົນເຜົ່າ">
-                  </div>
-                </div>
-                <br>
-                <div class="form-row">
-                  <div class="col">
-                    <label>ຫ້ອງຮຽນ</label>
-                    <select name="classid" id="classid" class="form-control select2bs4" style="width: 100%;">
-                      <option value="----****----">-----ເລືອກລາຍການ-----</option>
-                      <?php
-                      include "components/classroom.php";
-                      ?>
-                    </select>
-                  </div>
-                  <div class="col">
-                    <label for="stphone">ເບີໂທ</label>
-                    <input type="text" name="stphone" class="form-control" placeholder="ປ່ອນເບີໂທ">
-                  </div>
-                  <?php include "components/insert/insert_new_register.php" ?>
-                </div>
-                <br>
-                <div class="form-row">
-                  <div class="col">
-                    <label for="status">ສະຖານະການຈ່າຍ</label>
-                    <select name="status" id="status" class="form-control select2bs4" style="width: 100%;">
-                      <option value="----****----">-----ເລືອກລາຍການ-----</option>
-                      <option value="ຍັງ">ຍັງ</option>
-                      <option value="ຈ່າຍແລ້ວ">ຈ່າຍແລ້ວ</option>
-                    </select>
-                  </div>
-                  <div class="col">
-                    <label for="sttotal">ຈຳນວນ</label>
-                    <input type="text" name="sttotal" class="form-control" placeholder="ປ່ອນຈຳນວນເງິນ">
+            <br>
+            <form method="post">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="card">
+                      <div class="card-header">
+                        <h3 class="card-title">ຕາຕະລາງນັກຮຽນ</h3>
+                      </div>
+                      <div class="card-body">
+                        <table id="example2" class="table table-bordered table-hover">
+                          <thead>
+                            <tr>
+                              <th>ລະຫັດ</th>
+                              <th>ຊື່</th>
+                              <th>ນາມສະກຸນ</th>
+                              <th>ເພດ</th>
+                              <th>ວັນເກີດ</th>
+                              <th>ຊົນເຜົ່າ</th>
+                              <th>ສາສະໜາ</th>
+                              <th>ສາສະໜາ</th>
+                              <th>ລະຫັດ</th>
+                              <th>ຊື່</th>
+                              <th>ນາມສະກຸນ</th>
+                              <th>ເພດ</th>
+                              <th>ວັນເກີດ</th>
+                              <th>ຊົນເຜົ່າ</th>
+                              <th>ສາສະໜາ</th>
+                              <th>ສາສະໜາ</th>
+                              <th>ສາສະໜາ</th>
+                              <th>ສາສະໜາ</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <?php
+                            include "conn.php";
+                            $sql = "SELECT * FROM studenttb INNER JOIN classtb ON studenttb.classid=classtb.classid;";
+                            $result = $conn->query($sql);
+                            while ($row = $result->fetch_assoc()) {
+                            ?>
+                              <tr>
+                                <td><?php echo $row['stid'] ?></td>
+                                <td><?php echo $row['stname'] ?></td>
+                                <td><?php echo $row['stsurname'] ?></td>
+                                <td><?php echo $row['stsex'] ?></td>
+                                <td><?php echo $row['stdob'] ?></td>
+                                <td><?php echo $row['stvillage'] ?></td>
+                                <td><?php echo $row['stdistrict'] ?></td>
+                                <td><?php echo $row['stprovince'] ?></td>
+                                <td><?php echo $row['streligion'] ?></td>
+                                <td><?php echo $row['sttribe'] ?></td>
+                                <td><?php echo $row['classname'] ?></td>
+                                <td><?php echo $row['yearid'] ?></td>
+                                <td><?php echo $row['status'] ?></td>
+                                <td><?php echo $row['stphone'] ?></td>
+                                <td><?php echo $row['stposition'] ?></td>
+                                <td><?php echo $row['sttotal'] ?></td>
+                                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?php echo $row['stid']; ?>">ແກ້ໄຂ</button></td>
+                                <td>
+                                  <input type="hidden" id="getid" name="getid" value="<?php echo $row['stid'] ?>">
+                                  <?php echo "<a href=?action=del&id=" . $row['stid'] . "" ?><button class='btn btn-danger'> <i class='glyphicon fas fa-trash'></i> ລຶບ</button>
+                                </td>
+                              </tr>
+                            <?php
+                              include "components/modal/new-student/modal-new-student.php";
+                            }
+                            ?>
+                          </tbody>
+                          <tfoot>
+                            <tr>
+                              <th>ລະຫັດ</th>
+                              <th>ຊື່</th>
+                              <th>ນາມສະກຸນ</th>
+                              <th>ເພດ</th>
+                              <th>ວັນເກີດ</th>
+                              <th>ຊົນເຜົ່າ</th>
+                              <th>ສາສະໜາ</th>
+                              <th>ສາສະໜາ</th>
+                              <th>ລະຫັດ</th>
+                              <th>ຊື່</th>
+                              <th>ນາມສະກຸນ</th>
+                              <th>ເພດ</th>
+                              <th>ວັນເດືອນປີເກີດ</th>
+                              <th>ຊົນເຜົ່າ</th>
+                              <th>ສາສະໜາ</th>
+                              <th>ສາສະໜາ</th>
+                              <th>ສາສະໜາ</th>
+                              <th>ສາສະໜາ</th>
+                            </tr>
+                          </tfoot>
+                        </table>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="card-footer">
-                <button type="submit" name="insert" id="insert" class="btn btn-primary">ລົງທະບຽນ</button>
               </div>
             </form>
           </div>
         </div>
-        <form method="post">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-12">
-                <div class="card">
-                  <div class="card-header">
-                    <h3 class="card-title">ຕາຕະລາງນັກຮຽນ</h3>
-                  </div>
-                  <div class="card-body">
-                    <table id="example2" class="table table-bordered table-hover">
-                      <thead>
-                        <tr>
-                          <th>ລະຫັດ</th>
-                          <th>ຊື່</th>
-                          <th>ນາມສະກຸນ</th>
-                          <th>ເພດ</th>
-                          <th>ວັນເດືອນປີເກີດ</th>
-                          <th>ຊົນເຜົ່າ</th>
-                          <th>ສາສະໜາ</th>
-                        </tr>
-                      </thead>
-
-                      <tbody>
-
-                      </tbody>
-                      <tfoot>
-                        <tr>
-                          <th>ລະຫັດ</th>
-                          <th>ຊື່</th>
-                          <th>ນາມສະກຸນ</th>
-                          <th>ເພດ</th>
-                          <th>ວັນເດືອນປີເກີດ</th>
-                          <th>ຊົນເຜົ່າ</th>
-                          <th>ສາສະໜາ</th>
-                        </tr>
-                      </tfoot>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </form>
       </section>
     </div>
     <!-- /.content-wrapper -->
-    <?php include "components/footer.php"  ?>
+    <?php
+    include "components/footer.php";
+    include "components/update/update-new-student.php";
+    ?>
+
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
       <!-- Control sidebar content goes here -->

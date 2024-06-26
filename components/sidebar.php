@@ -101,8 +101,8 @@
                         </a>
                     </li>
 
-                    <li class="nav-item <?= $page == 'rp_Alaryhup.php' || $page == 'rp_Alaryjay.php' ? 'menu-open' : '' ?>">
-                        <a href="rp_Alaryhup.php" class="nav-link <?= $page == 'rp_Alaryhup.php' || $page == 'rp_Alaryjay.php' ? 'active' : '' ?>">
+                    <li class="nav-item <?= $page == 'Playment.php' ? 'menu-open' : '' ?>">
+                        <a href="Playment.php" class="nav-link <?= $page == 'Playment.php'  ? 'active' : '' ?>">
                             <i class="nav-icon fas fa-retweet"></i>
                             <p>
                                 ຈ່າຍຄ່າເທີມ

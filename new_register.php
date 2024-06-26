@@ -74,22 +74,18 @@
                   </div>
                 </div>
                 <br>
-                <div class="form-group">
-                  <label for="stdob">ວັນເດືອນປີເກີດ</label>
-                  <input type="date" name="stdob" class="form-control" placeholder="ວັນທີ-ເດືອນ-ປີ">
-                </div>
-                <br>
                 <div class="form-row">
-                  <div class="col-1">
-                    <label for="">ເພດ</label>
+                  <div class="col-4">
+                    <label for="stsex">ເພດ</label>
+                    <select name="stsex" id="stsex" class="form-control select2bs4" style="width: 100%;">
+                      <option value="----****----">-----ເລືອກລາຍການ-----</option>
+                      <option value="ຊາຍ">ຊາຍ</option>
+                      <option value="ຍິງ">ຍິງ</option>
+                    </select>
                   </div>
-                  <div class="col-1">
-                    <input class="form-check-input" type="radio" value="ຍິງ" name="stsex">
-                    <label class="form-check-label">ຍິງ</label>
-                  </div>
-                  <div class="col-1">
-                    <input class="form-check-input" type="radio" value="ຊາຍ" name="stsex">
-                    <label class="form-check-label">ຊາຍ</label>
+                  <div class="col">
+                    <label for="stdob">ວັນເດືອນປີເກີດ</label>
+                    <input type="date" name="stdob" class="form-control" placeholder="ວັນທີ-ເດືອນ-ປີ">
                   </div>
                 </div>
                 <br>
@@ -134,7 +130,7 @@
                     <label for="stphone">ເບີໂທ</label>
                     <input type="text" name="stphone" class="form-control" placeholder="ປ່ອນເບີໂທ">
                   </div>
-                  <?php include "components/insert/insert_new_register.php"?>
+                  <?php include "components/insert/insert_new_register.php" ?>
                 </div>
                 <br>
                 <div class="form-row">

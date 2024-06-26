@@ -39,7 +39,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0" style="font-weight: bold;">ໜ້າຫຼັກa</h1>
+              <h1 class="m-0" style="font-weight: bold;">ໜ້າຫຼັກ</h1>
             </div><!-- /.col -->
           </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -54,13 +54,22 @@
               <!-- small box -->
               <div class="small-box bg-info">
                 <div class="inner">
-                  <h3>5</h3>
+                  <?php
+                  include "conn.php";
+                  $sql = "SELECT COUNT(*) as total FROM studenttb";
+                  $result = $conn->query($sql);
+                  while ($row = $result->fetch_assoc()) {
+                  ?>
+                    <h3><?php echo $row['total']; ?></h3>
+                  <?php
+                  }
+                  ?>
                   <p>ລົງທະບຽນ</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-bag"></i>
                 </div>
-                <a href="A_laryhup.php" class="small-box-footer">ເບິ່ງທັງໝົດab <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="new_register.php" class="small-box-footer">ເບິ່ງທັງໝົດ <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -68,13 +77,22 @@
               <!-- small box -->
               <div class="small-box bg-warning">
                 <div class="inner">
-                  <h3>5</h3>
+                  <?php
+                  include "conn.php";
+                  $sql = "SELECT COUNT(*) as total FROM classtb";
+                  $result = $conn->query($sql);
+                  while ($row = $result->fetch_assoc()) {
+                  ?>
+                    <h3><?php echo $row['total']; ?></h3>
+                  <?php
+                  }
+                  ?>
                   <p>ຫ້ອງຮຽນ</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-bag"></i>
                 </div>
-                <a href="A_laryhup.php" class="small-box-footer">ເບິ່ງທັງໝົດ <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="main_classroom.php" class="small-box-footer">ເບິ່ງທັງໝົດ <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -82,27 +100,22 @@
               <!-- small box -->
               <div class="small-box bg-danger">
                 <div class="inner">
-                  <h3>5</h3>
+                  <?php
+                  include "conn.php";
+                  $sql = "SELECT COUNT(*) as total FROM allyearscore_tb";
+                  $result = $conn->query($sql);
+                  while ($row = $result->fetch_assoc()) {
+                  ?>
+                    <h3><?php echo $row['total']; ?></h3>
+                  <?php
+                  }
+                  ?>
                   <p>ຄະແນນ</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-bag"></i>
                 </div>
-                <a href="A_laryhup.php" class="small-box-footer">ເບິ່ງທັງໝົດ <i class="fas fa-arrow-circle-right"></i></a>
-              </div>
-            </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-6">
-              <!-- small box -->
-              <div class="small-box bg-success">
-                <div class="inner">
-                  <h3>5</h3>
-                  <p>ຈ່າຍຄ່າເທີມ</p>
-                </div>
-                <div class="icon">
-                  <i class="ion ion-bag"></i>
-                </div>
-                <a href="A_laryhup.php" class="small-box-footer">ເບິ່ງທັງໝົດ <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="Score.php" class="small-box-footer">ເບິ່ງທັງໝົດ <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -110,13 +123,22 @@
               <!-- small box -->
               <div class="small-box bg-danger">
                 <div class="inner">
-                  <h3>5</h3>
-                  <p>ຈັດການຂໍ້ມູນພື້ນຖານ</p>
+                  <?php
+                  include "conn.php";
+                  $sql = "SELECT COUNT(*) as total FROM feetb";
+                  $result = $conn->query($sql);
+                  while ($row = $result->fetch_assoc()) {
+                  ?>
+                    <h3><?php echo $row['total']; ?></h3>
+                  <?php
+                  }
+                  ?>
+                  <p>ຈ່າຍຄ່າເທີມ</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-bag"></i>
                 </div>
-                <a href="A_laryhup.php" class="small-box-footer">ເບິ່ງທັງໝົດa <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="Playment.php" class="small-box-footer">ເບິ່ງທັງໝົດa <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->

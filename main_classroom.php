@@ -48,7 +48,7 @@
                 <div class="col">
                     <div class="card card-success">
                         <div class="card-header">
-                            <h3 class="card-title">ຫ້ອງຮຽນ en1</h3>
+                            <h3 class="card-title">ຫ້ອງຮຽນ EN1</h3>
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
                                 </button>
@@ -62,11 +62,11 @@
                                 <div class="row">
                                     <?php
                                     include "conn.php";
-                                    $sql = "SELECT `classid`, `classname` FROM `classtb`";
+                                    $sql = "SELECT * FROM `classtb` WHERE `classid` IN ('en1', 'en2', 'en3');";
                                     $result = $conn->query($sql);
                                     while ($row = $result->fetch_assoc()) {
                                     ?>
-                                        <div class="col-lg-3 col-6">
+                                        <div class="col-lg-4 col">
                                             <!-- small box -->
                                             <div class="small-box bg-info">
                                                 <div class="inner">
@@ -76,7 +76,100 @@
                                                 <div class="icon">
                                                     <i class="ion ion-bag"></i>
                                                 </div>
-                                                <input type="" id="getid" name="getid" value="<?php echo $row['classid'] ?>">
+                                                <a href="classroom.php?id=<?php echo $row['classid'] ?>" class="small-box-footer">ເບິ່ງທັງໝົດ<i class="fas fa-arrow-circle-right"></i></a>
+                                            </div>
+                                        </div>
+                                    <?php
+                                    }
+                                    ?>
+                                </div>
+                                <!-- ./col -->
+                            </div>
+                            <!-- /.col-md-6 -->
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+                <div class="col">
+                    <div class="card card-success">
+                        <div class="card-header">
+                            <h3 class="card-title">ຫ້ອງຮຽນ EN2</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                            <!-- /.card-tools -->
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <div class="container-fluid">
+                                <!-- Small boxes (Stat box) -->
+                                <div class="row">
+                                    <?php
+                                    include "conn.php";
+                                    $sql = "SELECT * FROM `classtb` WHERE `classid` IN ('en2-1', 'en2-2', 'en2-3');";
+                                    $result = $conn->query($sql);
+                                    while ($row = $result->fetch_assoc()) {
+                                    ?>
+                                        <div class="col-lg-4 col">
+                                            <!-- small box -->
+                                            <div class="small-box bg-info">
+                                                <div class="inner">
+                                                    <p>ຫ້ອງຮຽນ</p>
+                                                    <h3> <?php echo $row['classname'] ?> </h3>
+                                                </div>
+                                                <div class="icon">
+                                                    <i class="ion ion-bag"></i>
+                                                </div>
+                                                <a href="classroom.php?id=<?php echo $row['classid'] ?>" class="small-box-footer">ເບິ່ງທັງໝົດ<i class="fas fa-arrow-circle-right"></i></a>
+                                            </div>
+                                        </div>
+                                    <?php
+                                    }
+                                    ?>
+                                </div>
+                                <!-- ./col -->
+                            </div>
+                            <!-- /.col-md-6 -->
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+                <div class="col">
+                    <div class="card card-success">
+                        <div class="card-header">
+                            <h3 class="card-title">ຫ້ອງຮຽນ EN3</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                            <!-- /.card-tools -->
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <div class="container-fluid">
+                                <!-- Small boxes (Stat box) -->
+                                <div class="row">
+                                    <?php
+                                    include "conn.php";
+                                    $sql = "SELECT * FROM `classtb` WHERE `classid` IN ('en3-1', 'en3-2', 'en3-3');";
+                                    $result = $conn->query($sql);
+                                    while ($row = $result->fetch_assoc()) {
+                                    ?>
+                                        <div class="col-lg-4 col">
+                                            <!-- small box -->
+                                            <div class="small-box bg-info">
+                                                <div class="inner">
+                                                    <p>ຫ້ອງຮຽນ</p>
+                                                    <h3> <?php echo $row['classname'] ?> </h3>
+                                                </div>
+                                                <div class="icon">
+                                                    <i class="ion ion-bag"></i>
+                                                </div>
                                                 <a href="classroom.php?id=<?php echo $row['classid'] ?>" class="small-box-footer">ເບິ່ງທັງໝົດ<i class="fas fa-arrow-circle-right"></i></a>
                                             </div>
                                         </div>

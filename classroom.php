@@ -42,26 +42,6 @@
           <div class="row mb-2">
             <div class="col-sm-6">
               <h1 class="m-0" style="font-weight: bold;">ຫ້ອງຮຽນ</h1>
-              <?php
-              include "conn.php";
-              if (isset($_GET['id'])) {
-                $id = $_GET['id']; // สมมติว่า $id มาจาก query string
-                // ป้องกัน SQL Injection
-                $id = $conn->real_escape_string($id);
-                $sql = "SELECT * FROM studenttb INNER JOIN classtb ON studenttb.classid=classtb.classid WHERE classtb.classid = '$id';";
-                $result = $conn->query($sql);
-
-                if ($result) {
-                  // นับจำนวนแถวที่ได้จากการ query
-                  $row_count = $result->num_rows;
-                  echo "Number of students in class $id: " . $row_count;
-                } else {
-                  echo "Error: " . $conn->error;
-                }
-              } else {
-                echo "Class ID not provided.";
-              }
-              ?>
             </div><!-- /.col -->
           </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -78,35 +58,62 @@
               <div class="card-body">
                 <div class="form-row">
                   <div class="col-2">
-                    <label for="yearid">ນັກຮຽນທັງໝົດ</label>
-                    <input type="text" name="yearid" class="form-control">
+                    <label for="st-student">ນັກຮຽນທັງໝົດ</label>
+                    <?php
+                    include "conn.php";
+                    if (isset($_GET['id'])) {
+                      $id = $_GET['id']; // สมมติว่า $id มาจาก query string
+                      // ป้องกัน SQL Injection
+                      $id = $conn->real_escape_string($id);
+                      $sql = "SELECT * FROM studenttb INNER JOIN classtb ON studenttb.classid=classtb.classid WHERE classtb.classid = '$id';";
+                      $result = $conn->query($sql);
+
+                      if ($result) {
+                        // นับจำนวนแถวที่ได้จากการ query
+                        $row_count = $result->num_rows;
+                    ?>
+                        <input type="text" name="st-student" class="form-control" value="<?php echo $row_count ?>">
+                    <?php
+                      } else {
+                        echo "Error: " . $conn->error;
+                      }
+                    } else {
+                      echo "Class ID not provided.";
+                    }
+                    ?>
                   </div>
                   <div class="col">
                     <label>ຫ້ອງຮຽນ</label>
                     <select name="classid" id="classid" class="form-control select2bs4" style="width: 100%;">
-                      <option value="----****----">-----ເລືອກລາຍການ-----</option>
-                      <?php
-                      include "components/classroom.php";
-                      ?>
+                      <option value="----****----"><?php echo $id; ?></option>
                     </select>
                   </div>
                   <div class="col">
                     <label for="yearid">ສົກຮຽນ</label>
-                    <input type="text" name="yearid" class="form-control">
+                    <input type="text" name="yearid" class="form-control" value="2023-2024">
                   </div>
                 </div>
                 <br>
                 <b>
                   <p style="text-align: center;">ອາຈານປະຈຳຫ້ອງ</p>
                 </b>
+                <?php
+                include "conn.php";
+                $sql = "SELECT * FROM employeetb INNER JOIN classtb ON employeetb.classid=classtb.classid WHERE classtb.classid = '$id'";
+                $result = $conn->query($sql);
+                while ($row = $result->fetch_assoc()) {
+                    $t1 = $row['emname'];
+                    $t2 = $row['emsurname'];
+                }
+                ?>
                 <div class="form-row">
                   <div class="col">
                     <label for="stdob">ຊື່</label>
-                    <input type="text" name="yearid" class="form-control">
+                    <input type="text" name="yearid" class="form-control" value="<?php echo $t1; ?>">
                   </div>
                   <div class="col">
                     <label for="stdob">ນາມສະກຸນ</label>
-                    <input type="text" name="yearid" class="form-control">
+                    <input type="text" name="yearid" class="form-control" value="<?php echo $t2; ?>">
                   </div>
                 </div>
                 <br>
