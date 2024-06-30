@@ -158,6 +158,7 @@
     <?php
     include "components/footer.php";
     include "components/update/update-new-student.php";
+    header("Refresh:0; url=i_information_student.php");
     ?>
 
     <!-- Control Sidebar -->

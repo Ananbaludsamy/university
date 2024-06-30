@@ -21,7 +21,6 @@ if (isset($_POST['Edit'])) {
     $sql = "UPDATE `studenttb` SET `stid`='$stid',`stname`='$stname',`stsurname`='$stsurname',`stsex`='$stsex',`stdob`='$stdob',`stvillage`='$stvillage',`stdistrict`='$stdistrict',`stprovince`='$stprovince',`streligion`='$streligion',`sttribe`='$sttribe',`classid`='$classid',`yearid`='$yearid',`status`='$status',`stphone`='$stphone',`stposition`='$stposition',`sttotal`='$sttotal' WHERE stid = '$stid' ";
     if ($conn->query($sql) === TRUE) {
         echo "<script>alert('ທ່ານແກ້ໄຂຂໍ້ມູນສຳເລັດແລ້ວ');</script>";
-        header("Refresh:0; url=i_information_student.php");
     } else {
         echo "<script>alert('ກະລຸນາປ່ອນຂໍ້ມູນໃຫ້ຖືກຕ້ອງ');</script>";
     }
