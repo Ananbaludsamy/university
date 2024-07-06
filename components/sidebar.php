@@ -110,8 +110,8 @@
                         </a>
                     </li>
 
-                    <li class="nav-item <?= $page == 'i_information_student.php' || $page == 'i_information_staff.php' || $page == 'i_information_subject.php' ? 'menu-open' : '' ?>">
-                        <a href="i_information_student.php" class="nav-link <?= $page == 'i_information_student.php' || $page == 'i_information_staff.php' || $page == 'i_information_subject.php' ? 'active' : '' ?>">
+                    <li class="nav-item <?= $page == 'i_information_student.php' || $page == 'i_information_staff.php' || $page == 'i_information_subject.php' || $page == 'feeqty.php' ? 'menu-open' : '' ?>">
+                        <a href="i_information_student.php" class="nav-link <?= $page == 'i_information_student.php' || $page == 'i_information_staff.php' || $page == 'i_information_subject.php' || $page == 'feeqty.php' ? 'active' : '' ?>">
                             <i class="nav-icon fas fa-retweet"></i>
                             <p>
                                 ຈັດການຂໍ້ມູນພື້ນຖານ
@@ -140,6 +140,50 @@
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>
                                         ວີຊາຮຽນ
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="feeqty.php" class="nav-link <?= $page == 'feeqty.php' ? 'active' : '' ?>">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>
+                                        ລາຄາຄ່າເທີມ
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item <?= $page == 'report_student.php' || $page == 'report_staff.php' || $page == 'report_playment.php' ? 'menu-open' : '' ?>">
+                        <a href="report_student.php" class="nav-link <?= $page == 'report_student.php' || $page == 'report_staff.php' || $page == 'report_playment.php' ? 'active' : '' ?>">
+                            <i class="nav-icon fas fa-retweet"></i>
+                            <p>
+                                ລາຍງານ
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="report_student.php" class="nav-link <?= $page == 'report_student.php' ? 'active' : '' ?>">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>
+                                        ລາຍງານຂໍ້ມູນ ນັກຮຽນ
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="report_staff.php" class="nav-link <?= $page == 'report_staff.php' ? 'active' : '' ?>">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>
+                                        ລາຍງານຂໍ້ມູນ ພະນັກງານ
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="report_playment.php" class="nav-link <?= $page == 'report_playment.php' ? 'active' : '' ?>">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>
+                                        ລາຍງານຂໍ້ມູນ ລາຄາຄ່າເທີມ
                                     </p>
                                 </a>
                             </li>

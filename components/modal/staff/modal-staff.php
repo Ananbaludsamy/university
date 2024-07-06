@@ -1,4 +1,4 @@
-<div class="modal fade" id="modal<?php echo $row['stid']; ?>" tabindex="-1" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade" id="ed<?php echo $row['emid']; ?>" tabindex="-1" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -12,69 +12,66 @@
                     <div class="card-body">
                         <div class="form-row">
                             <div class="col">
-                                <label for="yearid">ສົກຮຽນ</label>
-                                <input type="text" name="yearid" class="form-control" placeholder="ປ່ອນສົກຮຽນ" value="<?php echo $row['yearid'] ?>">
-                            </div>
-                            <div class="col">
-                                <label for="stid">ລະຫັດນັກຮຽນ</label>
-                                <input type="text" name="stid" class="form-control" placeholder="ປ່ອນລະຫັດນັກຮຽນ" value="<?php echo $row['stid'] ?>">
-                            </div>
-                        </div>
-                        <br>
-                        <div class="form-row">
-                            <div class="col">
                                 <label for="stname1">ຊື່</label>
-                                <input type="text" name="stname" class="form-control" placeholder="ປ່ອນລາຍຊື່" value="<?php echo $row['stname'] ?>">
+                                <input type="text" name="stname" class="form-control" placeholder="ປ່ອນລາຍຊື່" value="<?php echo $row['emname'] ?>">
                             </div>
                             <div class="col">
                                 <label for="stsurname">ນາມສະກຸນ</label>
-                                <input type="text" name="stsurname" class="form-control" placeholder="ປ່ອນນາມສະກຸນ" value="<?php echo $row['stsurname'] ?>">
+                                <input type="text" name="stsurname" class="form-control" placeholder="ປ່ອນນາມສະກຸນ" value="<?php echo $row['emsurname'] ?>">
                             </div>
                         </div>
                         <br>
                         <div class="form-row">
                             <div class="col">
-                                <label for="stsex">ເພດ</label>
-                                <select name="stsex" id="stsex" class="form-control select2bs4" style="width: 100%;">
-                                    <option value="<?php echo $row['stsex'] ?>"><?php echo $row['stsex'] ?></option>
+                                <label for="emsex">ເພດ</label>
+                                <select name="emsex" id="emsex" class="form-control select2bs4" style="width: 100%;">
+                                    <option value="<?php echo $row['emsex'] ?>"><?php echo $row['emsex'] ?></option>
                                     <option value="ຊາຍ">ຊາຍ</option>
                                     <option value="ຍິງ">ຍິງ</option>
                                 </select>
                             </div>
                             <div class="col">
                                 <label for="stdob">ວັນເດືອນປີເກີດ</label>
-                                <input type="date" name="stdob" class="form-control" placeholder="ວັນທີ-ເດືອນ-ປີ" value="<?php echo $row['stdob'] ?>">
+                                <input type="date" name="stdob" class="form-control" placeholder="ວັນທີ-ເດືອນ-ປີ" value="<?php echo $row['emage'] ?>">
                             </div>
                         </div>
                         <br>
                         <div class="form-row">
                             <div class="col">
                                 <label for="stvillage">ບ້ານ</label>
-                                <input type="text" name="stvillage" class="form-control" placeholder="ປ່ອນບ້ານ" value="<?php echo $row['stvillage'] ?>">
+                                <input type="text" name="stvillage" class="form-control" placeholder="ປ່ອນບ້ານ" value="<?php echo $row['emvillage'] ?>">
                             </div>
                             <div class="col">
                                 <label for="stdistrict">ເມືອງ</label>
-                                <input type="text" name="stdistrict" class="form-control" placeholder="ປ່ອນເມືອງ" value="<?php echo $row['stdistrict'] ?>">
+                                <input type="text" name="stdistrict" class="form-control" placeholder="ປ່ອນເມືອງ" value="<?php echo $row['emdistrict'] ?>">
                             </div>
                             <div class="col">
                                 <label for="stprovince">ແຂວງ
                                 </label>
-                                <input type="text" name="stprovince" class="form-control" placeholder="ປ່ອນແຂວງ" value="<?php echo $row['stprovince'] ?>">
+                                <input type="text" name="stprovince" class="form-control" placeholder="ປ່ອນແຂວງ" value="<?php echo $row['emprovince'] ?>">
                             </div>
                         </div>
                         <br>
                         <div class="form-row">
                             <div class="col">
-                                <label for="streligion">ສາສະໜາ</label>
-                                <input type="text" name="streligion" class="form-control" placeholder="ປ່ອນສາສະໜາ" value="<?php echo $row['streligion'] ?>">
+                                <label for="streligion">ເບີໂທ</label>
+                                <input type="text" name="streligion" class="form-control" placeholder="ປ່ອນສາສະໜາ" value="<?php echo $row['emphone'] ?>">
                             </div>
                             <div class="col">
-                                <label for="sttribe">ຊົນເຜົ່າ</label>
-                                <input type="text" name="sttribe" class="form-control" placeholder="ປ່ອນຊົນເຜົ່າ" value="<?php echo $row['sttribe'] ?>">
+                                <label for="emposition">ຕຳແໜ່ງ</label>
+                                <select name="emposition" id="emposition" class="form-control select2bs4" style="width: 100%;">
+                                    <option value="<?php echo $row['emposition'] ?>"><?php echo $row['emposition'] ?></option>
+                                    <option value="ADDMIN">ADDMIN</option>
+                                    <option value="STAFF">STAFF</option>
+                                </select>
                             </div>
                         </div>
                         <br>
                         <div class="form-row">
+                            <div class="col">
+                                <label for="salary">ຈຳນວນ</label>
+                                <input type="text" name="salary" class="form-control" placeholder="ປ່ອນຈຳນວນເງິນ" value="<?php echo $row['salary'] ?>">
+                            </div>
                             <div class="col">
                                 <label>ຫ້ອງຮຽນ</label>
                                 <select name="classid" id="classid" class="form-control select2bs4" style="width: 100%;">
@@ -94,22 +91,6 @@
                                     } else {
                                         echo "0 results";
                                     } ?>
-                                </select>
-                            </div>
-                            <div class="col">
-                                <label for="stphone">ເບີໂທ</label>
-                                <input type="text" name="stphone" class="form-control" placeholder="ປ່ອນເບີໂທ" value="<?php echo $row['stphone'] ?>">
-                            </div>
-                        </div>
-                        <br>
-                        <div class="form-row">
-                            <div class="col">
-                                <label for="stposition">ຕຳແໜ່ງນັກຮຽນ</label>
-                                <select name="stposition" id="stposition" class="form-control select2bs4" style="width: 100%;">
-                                    <option value="<?php echo $row['stposition'] ?>"><?php echo $row['stposition'] ?></option>
-                                    <option value="ຄະນະຫ້ອງ">ຄະນະຫ້ອງ</option>
-                                    <option value="ຮອງຄະນຫ້ອງ1">ຮອງຄະນຫ້ອງ1</option>
-                                    <option value="ຮອງຄະນຫ້ອງ2">ຮອງຄະນຫ້ອງ2</option>
                                 </select>
                             </div>
                         </div>

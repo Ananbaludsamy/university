@@ -27,10 +27,11 @@
 
 <body class="hold-transition sidebar-mini layout-fixed">
   <div class="wrapper">
-    <!-- Preloader -->
+    <!-- Preloader 
     <div class="preloader flex-column justify-content-center align-items-center">
       <img class="animation__shake" src="dist/img/temple.png" alt="AdminLTELogo" height="60" width="60">
     </div>
+    -->
     <?php include "components/sidebar.php"; ?>
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -56,19 +57,13 @@
               <div class="card-body">
                 <div class="form-row">
                   <div class="col">
-                    <label for="name">ຄົ້ນຫາ</label>
-                    <input type="text" name="name" class="form-control" placeholder="">
-                  </div>
-                  <div class="col">
                     <label for="name">ຊື່ວິຊາ</label>
                     <input type="text" name="name" class="form-control" placeholder="ປ່ອນລາຍຊື່">
                   </div>
                 </div>
               </div>
               <div class="card-footer">
-                <button type="submit" name="insert" id="insert" class="btn btn-primary">ເພິ່ມ</button>
-                <button type="submit" name="insert" id="insert" class="btn btn-primary">ແກ້ໄຂ</button>
-                <button type="submit" name="insert" id="insert" class="btn btn-primary">ລຶບ</button>
+                <button type="submit" name="insert" id="insert" class="btn btn-primary">ເພິ່ມ +</button>
               </div>
             </form>
           </div>
@@ -127,7 +122,6 @@
     <!-- /.control-sidebar -->
   </div>
   <!-- ./wrapper -->
-
   <script src="plugins/jquery/jquery.min.js"></script>
   <script src="plugins/jquery/jquery.min"></script>
   <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -147,8 +141,6 @@
   <script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
   <script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
   <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-  <script src="plugins/chart.js/Chart.min.js"></script>
-  <script src="dist/js/pages/dashboard3.js"></script>
   <script>
     $(function() {
       $('#example2').DataTable({

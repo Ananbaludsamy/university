@@ -40,7 +40,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0" style="font-weight: bold;">ຂໍ້ມູນ ຈ່າຍຄ່າເທີມ</h1>
+                            <h1 class="m-0" style="font-weight: bold;">ຈັດການຂໍ້ມູນ</h1>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
@@ -51,68 +51,69 @@
                 <div class="container-fluid">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">ຍັງບໍ່ຈ່າຍຄ່າເທີມ</h3>
-                            <div class="card-tools" style="float: left; margin-left: 10px;">
-                                <?php
-                                include "conn.php";
-                                $sqlstaus = "SELECT COUNT(status) AS playment FROM `feetb` WHERE status = 'ຍັງ'";
-                                $resultstatus = $conn->query($sqlstaus);
-                                while ($rowstatus = $resultstatus->fetch_assoc()) {
-                                    $output = $rowstatus['playment'];
-                                ?>
-                                    <span class="badge bg-danger"><?php echo $output ?></span>
-                                <?php
-                                }
-                                ?>
-                            </div>
+                            <h3 class="card-title">ຂໍ້ມູນ ລາຄາຄ່າເທີມ</h3>
                         </div>
+                        <form method="POST">
+                            <div class="card-body">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>ຫ້ອງຮຽນ</label>
+                                        <select name="classid" id="classid" class="form-control select2bs4" style="width: 100%;">
+                                            <option value="----****----">-----ເລືອກລາຍການ-----</option>
+                                            <?php
+                                            include "components/classroom.php";
+                                            ?>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <label for="qty">ຄ່າທຳນຽມ</label>
+                                        <input type="text" name="qty" class="form-control" placeholder="ປ່ອນຄ່າທຳນຽມ">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" name="insert" id="insert" class="btn btn-primary">ເພິ່ມ +</button>
+                            </div>
+                        </form>
                         <br>
                         <form method="post">
                             <div class="container-fluid">
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="card">
+                                            <div class="card-header">
+                                                <h3 class="card-title">ຕາຕະລາງນັກຮຽນ</h3>
+                                            </div>
                                             <div class="card-body">
                                                 <table id="example2" class="table table-bordered table-hover">
                                                     <thead>
                                                         <tr>
                                                             <th>ລະຫັດ</th>
-                                                            <th>ສົກຮຽນ</th>
-                                                            <th>ລະຫັດນັກສຶກສາ</th>
-                                                            <th>ຊື່</th>
-                                                            <th>ນາມສະກຸນ</th>
-                                                            <th>ສະຖານະການຈ່າຍ</th>
-                                                            <th>ຈຳນວນເງິນ</th>
                                                             <th>ຫ້ອງຮຽນ</th>
-                                                            <th>ຈ່າຍເງິນ</th>
+                                                            <th>ຈຳນວນເງິນ</th>
                                                             <th>ແກ້ໄຂ</th>
+                                                            <th>ລຶບ</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <?php
                                                         include "conn.php";
-                                                        $test = 'ຍັງ';
-                                                        $sql = "SELECT * FROM `feetb` inner join studenttb on feetb.stid = studenttb.stid inner join classtb on studenttb.classid = classtb.classid WHERE status = '$test' ";
+                                                        $sql = "SELECT * FROM feeqty_tb inner join classtb on feeqty_tb.classid = classtb.classid";
                                                         $result = $conn->query($sql);
                                                         while ($row = $result->fetch_assoc()) {
                                                         ?>
                                                             <tr>
-                                                                <td><?php echo $row['feeid'] ?></td>
-                                                                <td><?php echo $row['yearid'] ?></td>
-                                                                <td><?php echo $row['stid'] ?></td>
-                                                                <td><?php echo $row['stname'] ?></td>
-                                                                <td><?php echo $row['stsurname'] ?></td>
-                                                                <td><?php echo $row['status'] ?></td>
-                                                                <td><?php echo number_format($row['qty']) ?></td>
+                                                                <td><?php echo $row['fid'] ?></td>
                                                                 <td><?php echo $row['classname'] ?></td>
-                                                                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?php echo $row['feeid']; ?>"><span class='fas fa-edit'></span>ຈ່າຍເງິນ</button></td>
+                                                                <td><?php echo number_format($row['qty']) ?></td>
+                                                                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?php echo $row['fid']; ?>">ແກ້ໄຂ</button></td>
                                                                 <td>
-                                                                    <input type="hidden" id="getid" name="getid" value="<?php echo $row['stid'] ?>">
-                                                                    <?php echo '<a href=?action=del&id=' . $row['stid'] . '' ?> <button type="button" class='btn btn-danger'> <i class='glyphicon fas fa-trash'></i> ລຶບ</button>
+                                                                    <input type="hidden" id="getid" name="getid" value="<?php echo $row['fid'] ?>">
+                                                                    <?php echo '<a href=?action=del&id=' . $row['fid'] . '' ?> <button type="button" class='btn btn-danger'> <i class='glyphicon fas fa-trash'></i> ລຶບ</button>
                                                                 </td>
                                                             </tr>
                                                         <?php
-                                                            include "components/modal/playment/modal-playment.php";
+                                                            include "components/modal/new-student/modal-new-student.php";
                                                         }
                                                         ?>
                                                     </tbody>
@@ -157,7 +158,6 @@
     <script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
     <script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-
     <script>
         $(function() {
             $('#example2').DataTable({
@@ -170,18 +170,19 @@
                 "responsive": true,
                 "buttons": ["excel", "pdf", "print"],
                 "language": {
-                    "info": "ສະແດງລາຍການ _START_ ຫາ _END_ ຂອງ _TOTAL_ ລາຍການ",
+                    "info": "ສະແດງ _START_ ຫາ _END_ ຂອງ _TOTAL_ ໜ້າ",
                 },
                 "order": [],
                 "columnDefs": [{
                     "targets": 'no-sort',
                     "orderable": false,
                 }],
-            })
+            }).buttons().container().appendTo('#example2_wrapper .col-md-6:eq(0)');
         });
     </script>
     <?php
-    include "components/modal/playment/update-status.php";
+    include "components/insert/insert-feeqty.php";
+    include "components/update/update-new-student.php";
     if (isset($_GET['action']) && $_GET['action'] == 'del') {
         $get = $_GET['id'];
         echo "<script>
@@ -196,9 +197,9 @@
             cancelButtonText: 'ຍົກເລີກ'
         }).then((result) => {
             if (result.isConfirmed) {
-                window.location.href = 'Playment.php?action=confirm-delete&id=" . $get . "';
+                window.location.href = 'i_information_student.php?action=confirm-delete&id=" . $get . "';
             }else {
-                window.location.href = 'Playment.php';
+                window.location.href = 'i_information_student.php';
             }
         });
     </script>";
@@ -215,7 +216,7 @@
             timer: 2000
         }).then((result) => {
             if (result.isDismissed) {
-                window.location.href = 'Playment.php';
+                window.location.href = 'i_information_student.php';
             }
         });
         </script>";

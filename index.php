@@ -157,7 +157,6 @@
     <!-- /.control-sidebar -->
   </div>
   <!-- ./wrapper -->
-
   <script src="plugins/jquery/jquery.min.js"></script>
   <script src="plugins/jquery/jquery.min"></script>
   <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -177,8 +176,6 @@
   <script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
   <script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
   <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-  <script src="plugins/chart.js/Chart.min.js"></script>
-  <script src="dist/js/pages/dashboard3.js"></script>
   <script>
     $(function() {
       $('#example2').DataTable({

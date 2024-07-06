@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <link rel="stylesheet" href="plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+    <link rel="stylesheet" href="plugins/sweetalert2/sweetalert2.min.css">
 </head>
 <style>
     @media (max-width: 767.98px) {
@@ -208,6 +210,7 @@
     <script src="dist/js/adminlte.js"></script>
     <script src="dist/js/alert.js"></script>
     <script src="dist/js/pages/dashboard.js"></script>
+    <script src="plugins/sweetalert2/sweetalert2.min.js"></script>
     <script src="plugins/toastr/toastr.min.js"></script>
     <script src="plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
@@ -219,8 +222,6 @@
     <script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
     <script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-    <script src="plugins/chart.js/Chart.min.js"></script>
-    <script src="dist/js/pages/dashboard3.js"></script>
     <script>
         $(function() {
             $('#example2').DataTable({

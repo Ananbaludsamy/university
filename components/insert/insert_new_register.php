@@ -2,7 +2,15 @@
 include "conn.php";
 if (isset($_POST['insert'])) {
     if ($_POST['stname'] == null) {
-        echo "<script>alert('ທ່ານຕ້ອງປ່ອນຊື່ ແລະ ນາມສະກຸນກ່ອນ');</script>";
+?>
+        <script>
+            Swal.fire(
+                'ກະລຸນາປ່ອນຂໍ້ມູນ',
+                'ລາຍຊື່ທ່ານຍັງບໍ່ໄດ້ປ່ອນ',
+                'error'
+            )
+        </script>
+        <?php
     } else {
         /* GET INPUT FROM USER */
         $stid = $_POST['stid'];
@@ -21,11 +29,48 @@ if (isset($_POST['insert'])) {
         $status = $_POST['status'];
         $sttotal = $_POST['sttotal'];
         $stposition = "ນັກຮຽນ";
-        $sql = "INSERT INTO studenttb (stid, stname, stsurname, stsex, stdob, stvillage, stdistrict, stprovince, streligion, sttribe, classid, yearid, status, stphone, stposition, sttotal) VALUES ('$stid', '$stname', '$stsurname', '$stsex', '$stdob', '$stvillage', '$stdistrict', '$stprovince', '$streligion', '$sttribe', '$classid', '$yearid', '$status', '$stphone', '$stposition', '$sttotal')";
+        $sql = "INSERT INTO studenttb (stid, stname, stsurname, stsex, stdob, stvillage, stdistrict, stprovince, streligion, sttribe, classid, yearid, stphone, stposition) VALUES ('$stid', '$stname', '$stsurname', '$stsex', '$stdob', '$stvillage', '$stdistrict', '$stprovince', '$streligion', '$sttribe', '$classid', '$yearid', '$stphone', '$stposition')";
         if ($conn->query($sql) === TRUE) {
-            echo "<script>alert('ທ່ານບັນທຶກຂໍ້ມູນສຳເລັດແລ້ວ');</script>";
+            if ($_POST['qty'] == null) {
+                $testder = 0;
+            } else {
+                $testder = $_POST['qty'];
+            }
+            $pmsql = "INSERT INTO `feetb`(`stid`, `year`, `status`, `qty`) VALUES ('$stid','$yearid','$status','$testder')";
+            if ($conn->query($pmsql) === TRUE) {
+        ?>
+                <script>
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'ບັນທຶກຂໍ້ມູນສຳເລັດ',
+                        showConfirmButton: false,
+                        timer: 2000
+                    }).then((result) => {
+                        location.href = 'new_register.php'
+                    });
+                </script>
+            <?php
+            } else {
+            ?>
+                <script>
+                    Swal.fire(
+                        'ກະລຸນາປ່ອນຂໍ້ມູນ',
+                        'ໃຫ້ຖືກຕ້ອງ',
+                        'error'
+                    )
+                </script>
+            <?php
+            }
         } else {
-            echo "<script>alert('ກະລຸນາປ່ອນຂໍ້ມູນໃຫ້ຖືກຕ້ອງ');</script>";
+            ?>
+            <script>
+                Swal.fire(
+                    'ກະລຸນາປ່ອນຂໍ້ມູນ',
+                    'ໃຫ້ຖືກຕ້ອງ',
+                    'error'
+                )
+            </script>
+<?php
         }
         $conn->close();
     }

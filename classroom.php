@@ -102,8 +102,8 @@
                 $sql = "SELECT * FROM employeetb INNER JOIN classtb ON employeetb.classid=classtb.classid WHERE classtb.classid = '$id'";
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
-                    $t1 = $row['emname'];
-                    $t2 = $row['emsurname'];
+                  $t1 = $row['emname'];
+                  $t2 = $row['emsurname'];
                 }
                 ?>
                 <div class="form-row">
@@ -136,22 +136,20 @@
                     <table id="example2" class="table table-bordered table-hover">
                       <thead>
                         <tr>
-                          <th>ລະຫັດ</th>
+                          <th>ລະຫັດນັກສຶກສາ</th>
                           <th>ຊື່</th>
                           <th>ນາມສະກຸນ</th>
                           <th>ເພດ</th>
-                          <th>ວັນເດືອນປີເກີດ</th>
+                          <th>ວັນເກີດ</th>
+                          <th>ບ້ານ</th>
+                          <th>ເມືອງ</th>
+                          <th>ແຂວງ</th>
+                          <th>ສາສະໜາ</th>
                           <th>ຊົນເຜົ່າ</th>
-                          <th>ສາສະໜາ</th>
-                          <th>ສາສະໜາ</th>
-                          <th>ລະຫັດ</th>
-                          <th>ຊື່</th>
-                          <th>ນາມສະກຸນ</th>
-                          <th>ເພດ</th>
-                          <th>ວັນເດືອນປີເກີດ</th>
-                          <th>ຊົນເຜົ່າ</th>
-                          <th>ສາສະໜາ</th>
-                          <th>ສາສະໜາ</th>
+                          <th>ຕຳແໜ່ງ</th>
+                          <th>ສົກຮຽນ</th>
+                          <th>ເບີໂທ</th>
+                          <th>ຫ້ອງຮຽນ</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -172,37 +170,15 @@
                             <td><?php echo $row['stprovince'] ?></td>
                             <td><?php echo $row['streligion'] ?></td>
                             <td><?php echo $row['sttribe'] ?></td>
-                            <td><?php echo $row['classname'] ?></td>
-                            <td><?php echo $row['yearid'] ?></td>
-                            <td><?php echo $row['status'] ?></td>
-                            <td><?php echo $row['stphone'] ?></td>
                             <td><?php echo $row['stposition'] ?></td>
-                            <td><?php echo $row['sttotal'] ?></td>
+                            <td><?php echo $row['yearid'] ?></td>
+                            <td><?php echo $row['stphone'] ?></td>
+                            <td><?php echo $row['classname'] ?></td>
                           </tr>
                         <?php
                         }
                         ?>
                       </tbody>
-                      <tfoot>
-                        <tr>
-                          <th>ລະຫັດ</th>
-                          <th>ຊື່</th>
-                          <th>ນາມສະກຸນ</th>
-                          <th>ເພດ</th>
-                          <th>ວັນເດືອນປີເກີດ</th>
-                          <th>ຊົນເຜົ່າ</th>
-                          <th>ສາສະໜາ</th>
-                          <th>ສາສະໜາ</th>
-                          <th>ລະຫັດ</th>
-                          <th>ຊື່</th>
-                          <th>ນາມສະກຸນ</th>
-                          <th>ເພດ</th>
-                          <th>ວັນເດືອນປີເກີດ</th>
-                          <th>ຊົນເຜົ່າ</th>
-                          <th>ສາສະໜາ</th>
-                          <th>ສາສະໜາ</th>
-                        </tr>
-                      </tfoot>
                     </table>
                   </div>
                 </div>
@@ -232,6 +208,7 @@
   <script src="dist/js/adminlte.js"></script>
   <script src="dist/js/alert.js"></script>
   <script src="dist/js/pages/dashboard.js"></script>
+  <script src="plugins/sweetalert2/sweetalert2.min.js"></script>
   <script src="plugins/toastr/toastr.min.js"></script>
   <script src="plugins/datatables/jquery.dataTables.min.js"></script>
   <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
@@ -243,8 +220,6 @@
   <script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
   <script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
   <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-  <script src="plugins/chart.js/Chart.min.js"></script>
-  <script src="dist/js/pages/dashboard3.js"></script>
   <script>
     $(function() {
       $('#example2').DataTable({

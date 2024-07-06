@@ -15,14 +15,31 @@ if (isset($_POST['Edit'])) {
     $classid = $_POST['classid'];
     $yearid =  $_POST['yearid'];
     $stphone = $_POST['stphone'];
-    $status = $_POST['status'];
-    $sttotal = $_POST['sttotal'];
     $stposition = $_POST['stposition'];
-    $sql = "UPDATE `studenttb` SET `stid`='$stid',`stname`='$stname',`stsurname`='$stsurname',`stsex`='$stsex',`stdob`='$stdob',`stvillage`='$stvillage',`stdistrict`='$stdistrict',`stprovince`='$stprovince',`streligion`='$streligion',`sttribe`='$sttribe',`classid`='$classid',`yearid`='$yearid',`status`='$status',`stphone`='$stphone',`stposition`='$stposition',`sttotal`='$sttotal' WHERE stid = '$stid' ";
+    $sql = "UPDATE `studenttb` SET `stid`='$stid',`stname`='$stname',`stsurname`='$stsurname',`stsex`='$stsex',`stdob`='$stdob',`stvillage`='$stvillage',`stdistrict`='$stdistrict',`stprovince`='$stprovince',`streligion`='$streligion',`sttribe`='$sttribe',`classid`='$classid',`yearid`='$yearid',`stphone`='$stphone',`stposition`='$stposition' WHERE stid = '$stid' ";
     if ($conn->query($sql) === TRUE) {
-        echo "<script>alert('ທ່ານແກ້ໄຂຂໍ້ມູນສຳເລັດແລ້ວ');</script>";
+?>
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'ແກ້ໄຂມູນສຳເລັດແລ້ວ',
+                showConfirmButton: false,
+                timer: 2000
+            }).then((result) => {
+                location.href = 'i_information_student.php'
+            });
+        </script>
+    <?php
     } else {
-        echo "<script>alert('ກະລຸນາປ່ອນຂໍ້ມູນໃຫ້ຖືກຕ້ອງ');</script>";
+    ?>
+        <script>
+            Swal.fire(
+                'ກະລຸນາປ່ອນຂໍ້ມູນ',
+                'ໃຫ້ຖືກຕ້ອງ',
+                'error'
+            )
+        </script>
+<?php
     }
     $conn->close();
 }

@@ -1,7 +1,7 @@
 <?php
 include "conn.php";
 // SQL query เพื่อดึงข้อมูล
-$sql = "SELECT classid, classname FROM classtb WHERE classid in ('en1','en2','en3','en2-1','en2-2','en2-3')";
+$sql = "SELECT * FROM classtb";
 $result = $conn->query($sql);
 
 // ตรวจสอบว่ามีข้อมูลหรือไม่
