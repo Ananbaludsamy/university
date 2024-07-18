@@ -76,7 +76,7 @@
                                                                     <td><?php echo $row['stname'] ?></td>
                                                                     <td><?php echo $row['stsurname'] ?></td>
                                                                     <td><?php echo $row['status'] ?></td>
-                                                                    <td><?php echo $row['qty'] ?></td>
+                                                                    <td><?php echo number_format($row['qty']) ?></td>
                                                                     <td><?php echo $row['classname'] ?></td>
                                                                 </tr>
                                                         <?php

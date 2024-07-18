@@ -26,8 +26,8 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index.php" class="brand-link">
-        <img src="dist/img/temple.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">ວິທະຍາໄລ </span> <!--ເສຕຖາທິຣາຊ໌ -->
+        <img src="dist/img/images.jpeg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">Lao International</span> <!--ເສຕຖາທິຣາຊ໌ -->
     </a>
     <!-- Sidebar -->
     <div class="sidebar">
@@ -68,7 +68,7 @@
                                 <a href="new_register.php" class="nav-link <?= $page == 'new_register.php' ? 'active' : '' ?>">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>
-                                        ນັກຮຽນໃຫມ່
+                                        ນັກສຶກສາໃຫມ່
                                     </p>
                                 </a>
                             </li>
@@ -76,7 +76,7 @@
                                 <a href="old_register.php" class="nav-link <?= $page == 'old_register.php' ? 'active' : '' ?>">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>
-                                        ນັກຮຽນເກົ່າ
+                                        ນັກສຶກສາເກົ່າ
                                     </p>
                                 </a>
                             </li>
@@ -92,8 +92,8 @@
                         </a>
                     </li>
 
-                    <li class="nav-item <?= $page == 'Score.php' ? 'menu-open' : '' ?>">
-                        <a href="Score.php" class="nav-link <?= $page == 'Score.php' ? 'active' : '' ?>">
+                    <li class="nav-item <?= $page == 'main_Score.php' ? 'menu-open' : '' ?>">
+                        <a href="main_Score.php" class="nav-link <?= $page == 'main_Score.php' ? 'active' : '' ?>">
                             <i class="nav-icon fas fa-retweet"></i>
                             <p>
                                 ຄະແນນ
@@ -123,7 +123,7 @@
                                 <a href="i_information_student.php" class="nav-link <?= $page == 'i_information_student.php' ? 'active' : '' ?>">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>
-                                        ນັກຮຽນ
+                                        ນັກສຶກສາ
                                     </p>
                                 </a>
                             </li>

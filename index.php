@@ -157,6 +157,7 @@
     <!-- /.control-sidebar -->
   </div>
   <!-- ./wrapper -->
+
   <script src="plugins/jquery/jquery.min.js"></script>
   <script src="plugins/jquery/jquery.min"></script>
   <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -198,9 +199,9 @@
       }).buttons().container().appendTo('#example2_wrapper .col-md-6:eq(0)');
     });
   </script>
+
   <script>
     /* global Chart:false */
-
     $(function() {
       'use strict'
 
@@ -276,7 +277,6 @@
         }
       })
     })
-
     // lgtm [js/unused-local-variable]
   </script>
 

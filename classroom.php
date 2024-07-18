@@ -67,7 +67,6 @@
                       $id = $conn->real_escape_string($id);
                       $sql = "SELECT * FROM studenttb INNER JOIN classtb ON studenttb.classid=classtb.classid WHERE classtb.classid = '$id';";
                       $result = $conn->query($sql);
-
                       if ($result) {
                         // นับจำนวนแถวที่ได้จากการ query
                         $row_count = $result->num_rows;
