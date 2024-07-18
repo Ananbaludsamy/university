@@ -136,14 +136,6 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="i_information_subject.php" class="nav-link <?= $page == 'i_information_subject.php' ? 'active' : '' ?>">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>
-                                        ວີຊາຮຽນ
-                                    </p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
                                 <a href="feeqty.php" class="nav-link <?= $page == 'feeqty.php' ? 'active' : '' ?>">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>

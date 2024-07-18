@@ -115,7 +115,7 @@
                 <div class="icon">
                   <i class="ion ion-bag"></i>
                 </div>
-                <a href="Score.php" class="small-box-footer">ເບິ່ງທັງໝົດ <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="main_Score.php" class="small-box-footer">ເບິ່ງທັງໝົດ <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
