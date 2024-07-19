@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 13, 2024 at 06:01 PM
+-- Generation Time: Jul 19, 2024 at 01:43 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -55,8 +55,15 @@ CREATE TABLE `classtb` (
 --
 
 INSERT INTO `classtb` (`classid`, `classname`) VALUES
-('en1', '2e'),
-('en2', '3e');
+('en1', 'EN1/1'),
+('en2', 'EN1/2'),
+('en2-1', 'EN2/1'),
+('en2-2', 'EN2/2'),
+('en2-3', 'EN2/3'),
+('en3', 'EN1/3'),
+('en3-1', 'EN3/1'),
+('en3-2', 'EN3/2'),
+('en3-3', 'EN3/3');
 
 -- --------------------------------------------------------
 
@@ -65,7 +72,7 @@ INSERT INTO `classtb` (`classid`, `classname`) VALUES
 --
 
 CREATE TABLE `employeetb` (
-  `emid` int(11) NOT NULL,
+  `emid` varchar(50) NOT NULL,
   `emname` varchar(50) DEFAULT NULL,
   `emsurname` varchar(50) DEFAULT NULL,
   `emsex` varchar(20) DEFAULT NULL,
@@ -79,6 +86,14 @@ CREATE TABLE `employeetb` (
   `classid` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+--
+-- Dumping data for table `employeetb`
+--
+
+INSERT INTO `employeetb` (`emid`, `emname`, `emsurname`, `emsex`, `emage`, `emvillage`, `emdistrict`, `emprovince`, `emphone`, `emposition`, `salary`, `classid`) VALUES
+('1', 'e', 'e', 'e', '2024-06-05', 'e', 'e', 'e', 'e', 'e', 200, 'en1'),
+('2', 'A', 'A', 'A', '2024-06-11', 'A', 'A', 'A', 'A', 'A', 565, 'en2');
+
 -- --------------------------------------------------------
 
 --
@@ -90,6 +105,21 @@ CREATE TABLE `feeqty_tb` (
   `classid` varchar(20) NOT NULL,
   `qty` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `feeqty_tb`
+--
+
+INSERT INTO `feeqty_tb` (`fid`, `classid`, `qty`) VALUES
+(1, 'en1', 600000),
+(2, 'en2', 600000),
+(3, 'en3', 600000),
+(4, 'en2-1', 800000),
+(5, 'en2-2', 800000),
+(6, 'en2-3', 800000),
+(7, 'en3-1', 1000000),
+(8, 'en3-2', 1000000),
+(9, 'en3-3', 1000000);
 
 -- --------------------------------------------------------
 
@@ -104,6 +134,14 @@ CREATE TABLE `feetb` (
   `status` varchar(50) DEFAULT NULL,
   `qty` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `feetb`
+--
+
+INSERT INTO `feetb` (`feeid`, `stid`, `year`, `status`, `qty`) VALUES
+(2, 'ci15015', '2023-2024', 'ຈ່າຍແລ້ວ', '600000'),
+(3, 'ci15016', '2023-2024', 'ຈ່າຍແລ້ວ', '0');
 
 -- --------------------------------------------------------
 
@@ -138,20 +176,78 @@ CREATE TABLE `studenttb` (
   `sttribe` varchar(50) DEFAULT NULL,
   `classid` varchar(20) DEFAULT NULL,
   `yearid` varchar(20) DEFAULT NULL,
-  `status` varchar(20) DEFAULT NULL,
-  `stphone` varchar(50) DEFAULT NULL
+  `stphone` varchar(50) DEFAULT NULL,
+  `stposition` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `studenttb`
 --
 
-INSERT INTO `studenttb` (`stid`, `stname`, `stsurname`, `stsex`, `stdob`, `stvillage`, `stdistrict`, `stprovince`, `streligion`, `sttribe`, `classid`, `yearid`, `status`, `stphone`) VALUES
-('11233', 'testt', 'test', NULL, '2024-06-12', 'test', 'test', 'test', 'test', 'teswt', 'en1', 'a2', 'ຍັງ', '02078'),
-('112334414141', 'sg', 'test', 'on', '2024-06-13', 'sfgdg', 'test', 'test', 'sdfgsdg', 'teswt', 'en2', 'a2', 'ຍັງ', '020'),
-('11233441414156', 'testt', 'test', 'ຊາຍ', '2024-06-13', 'sfgdg', 'test', 'sdfgsd', 'sdfgsdg', 'sdfgsdg', 'en2', 'a2', 'ຍັງ', '02078'),
-('1123345', 'testt', 'test', NULL, '2024-06-12', 'test', 'test', 'test', 'test', 'teswt', 'en2', 'a2', 'ຍັງ', '02078'),
-('en1', 'test', 'test', NULL, '2024-06-01', 'teswt', 'test', 'test', 'test', 'test', 'en1', 't1', 't', '020');
+INSERT INTO `studenttb` (`stid`, `stname`, `stsurname`, `stsex`, `stdob`, `stvillage`, `stdistrict`, `stprovince`, `streligion`, `sttribe`, `classid`, `yearid`, `stphone`, `stposition`) VALUES
+('ci15015', 'ທົດສອບ', 'ລະບົບ', 'ຊາຍ', '2006-09-09', 'ນາເງິນ', 'ທຸລະຄົມ', 'ວຽງຈັນ', 'ພຸດ', 'ລາວ', 'en1', '2023-2024', '02078168482', 'ນັກຮຽນ'),
+('ci15016', 'ດອກແກ້ວ', 'ບົວລະພາ', 'ຊາຍ', '2024-07-06', 'ພະໄຊ', 'ສີສັດຕະນາກ', 'ນະຄອນຫຼວງວຽງຈັນ', 'ພຸດ', 'ລາວ', 'en2', '2023-2024', '02078168482', 'ນັກຮຽນ');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_course1`
+--
+
+CREATE TABLE `tb_course1` (
+  `cid` int(11) NOT NULL,
+  `stid` varchar(50) NOT NULL,
+  `GE1` int(11) DEFAULT NULL,
+  `PN` int(11) DEFAULT NULL,
+  `ER` int(11) DEFAULT NULL,
+  `GRM` int(11) DEFAULT NULL,
+  `EC` int(11) DEFAULT NULL,
+  `GE2` int(11) DEFAULT NULL,
+  `totall` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `tb_course1`
+--
+
+INSERT INTO `tb_course1` (`cid`, `stid`, `GE1`, `PN`, `ER`, `GRM`, `EC`, `GE2`, `totall`) VALUES
+(2, 'ci15015', 1, 2, 3, 4, 5, 6, 7);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_course2`
+--
+
+CREATE TABLE `tb_course2` (
+  `cid` int(11) NOT NULL,
+  `stid` varchar(50) NOT NULL,
+  `EB` int(11) DEFAULT NULL,
+  `EW1` int(11) DEFAULT NULL,
+  `LS` int(11) DEFAULT NULL,
+  `AS2` int(11) DEFAULT NULL,
+  `ED` int(11) DEFAULT NULL,
+  `COM` int(11) DEFAULT NULL,
+  `totall` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_course3`
+--
+
+CREATE TABLE `tb_course3` (
+  `cid` int(11) NOT NULL,
+  `stid` varchar(50) NOT NULL,
+  `ETS` int(11) DEFAULT NULL,
+  `ECC` int(11) DEFAULT NULL,
+  `EHT` int(11) DEFAULT NULL,
+  `EM` int(11) DEFAULT NULL,
+  `EHR` int(11) DEFAULT NULL,
+  `EA` int(11) DEFAULT NULL,
+  `totall` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Indexes for dumped tables
@@ -206,6 +302,13 @@ ALTER TABLE `studenttb`
   ADD KEY `classid` (`classid`);
 
 --
+-- Indexes for table `tb_course1`
+--
+ALTER TABLE `tb_course1`
+  ADD PRIMARY KEY (`cid`),
+  ADD KEY `tbcourse_to_st` (`stid`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -216,28 +319,28 @@ ALTER TABLE `allyearscore_tb`
   MODIFY `scid` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `employeetb`
---
-ALTER TABLE `employeetb`
-  MODIFY `emid` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `feeqty_tb`
 --
 ALTER TABLE `feeqty_tb`
-  MODIFY `fid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `fid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `feetb`
 --
 ALTER TABLE `feetb`
-  MODIFY `feeid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `feeid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `statustb`
 --
 ALTER TABLE `statustb`
   MODIFY `statusid` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tb_course1`
+--
+ALTER TABLE `tb_course1`
+  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
@@ -278,6 +381,12 @@ ALTER TABLE `statustb`
 --
 ALTER TABLE `studenttb`
   ADD CONSTRAINT `classid` FOREIGN KEY (`classid`) REFERENCES `classtb` (`classid`);
+
+--
+-- Constraints for table `tb_course1`
+--
+ALTER TABLE `tb_course1`
+  ADD CONSTRAINT `tbcourse_to_st` FOREIGN KEY (`stid`) REFERENCES `studenttb` (`stid`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
