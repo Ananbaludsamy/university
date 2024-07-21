@@ -92,7 +92,6 @@
                             while ($row = $result->fetch_assoc()) {
                             ?>
                               <tr>
-
                                 <td><?php echo $row['stid'] ?></td>
                                 <td><?php echo $row['stname'] ?></td>
                                 <td><?php echo $row['stsurname'] ?></td>

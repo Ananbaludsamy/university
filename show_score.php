@@ -27,8 +27,8 @@
 <!-- php -->
 <?php
 include "conn.php";
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
+if (isset($_GET['getid'])) {
+    $getids = $_GET['getid'];
 }
 ?>
 <!-- end php -->
@@ -61,7 +61,7 @@ if (isset($_GET['id'])) {
                             <h3 class="card-title">ປ່ອນຂໍ້ມູນ ຫ້ອງຮຽນ</h3>
                         </div>
                         <div class="brder" style="margin: 20px;">
-                            <?php echo '<a href=?action=a_id&getid=' . $id . '></a>' ?> <button type="button" class='btn btn-danger'> <i class='glyphicon fas fa-trash'></i> ລຶບ</button>
+                            <a href="show_score.php"><button type="button" class="btn btn-success">ເບິ່ງຄະແນນທັງໝົດ++</button></a>
                         </div>
                         <form method="post">
                             <div class="container-fluid">
@@ -95,7 +95,7 @@ if (isset($_GET['id'])) {
                                                     <tbody>
                                                         <?php
                                                         include "conn.php";
-                                                        $sql = "SELECT * FROM studenttb INNER JOIN classtb ON studenttb.classid=classtb.classid WHERE classtb.classid = '$id' ";
+                                                        $sql = "SELECT * FROM studenttb INNER JOIN classtb ON studenttb.classid=classtb.classid WHERE classtb.classid = '$getids' ";
                                                         $result = $conn->query($sql);
                                                         while ($row = $result->fetch_assoc()) {
                                                         ?>
@@ -141,7 +141,7 @@ if (isset($_GET['id'])) {
         <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
-
+     
     <script>
         $.widget.bridge('uibutton', $.ui.button)
         //create function
