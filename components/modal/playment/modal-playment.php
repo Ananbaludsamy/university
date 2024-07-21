@@ -68,7 +68,7 @@
                         <div class="form-row">
                             <div class="col">
                                 <label for="qty">ຈຳນວນເງິນ</label>
-                                <input type="text" name="stname" class="form-control" placeholder="ປ່ອນລາຍຊື່" value="<?php echo number_format($row['qty']); ?>">
+                                <input type="text" name="qty" class="form-control" placeholder="ປ່ອນລາຍຊື່" value="<?php echo number_format($row['qty']); ?>">
                             </div>
                         </div>
                     </div>

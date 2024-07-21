@@ -54,7 +54,7 @@
                             </p>
                         </a>
                     </li>
-                    <li class="nav-header">ມະຫາວິທະຍາໄລ</li>
+                    <li class="nav-header">ວິທະຍາໄລ ລາວນານາຊາດ</li>
                     <li class="nav-item <?= $page == 'new_register.php' || $page == 'old_register.php' ? 'menu-open' : '' ?>">
                         <a href="new_register.php" class="nav-link <?= $page == 'new_register.php' || $page == 'old_register.php' ? 'active' : '' ?>">
                             <i class="nav-icon fas fa-retweet"></i>

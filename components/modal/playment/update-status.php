@@ -8,8 +8,9 @@ if (isset($_POST['playment'])) {
     $stname = $_POST['stname'];
     $stsurname = $_POST['stsurname'];
     $classid = $_POST['classid'];
-    $status = "ຈ່າຍແລ້ວ";
-    $sql = "UPDATE `feetb` SET `status`='$status' WHERE feeid = '$stids' ";
+    $status = $_POST['status'];
+    $qty = $_POST['qty'];
+    $sql = "UPDATE `feetb` SET `status`='$status', `qty`='$qty' WHERE feeid = '$stids' ";
     if ($conn->query($sql) === TRUE) {
 ?>
         <script>

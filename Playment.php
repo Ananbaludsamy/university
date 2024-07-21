@@ -103,7 +103,7 @@
                                                                 <td><?php echo $row['stname'] ?></td>
                                                                 <td><?php echo $row['stsurname'] ?></td>
                                                                 <td><?php echo $row['status'] ?></td>
-                                                                <td><?php echo number_format($row['qty']) ?></td>
+                                                                <td><?php echo $row['qty'] ?></td>
                                                                 <td><?php echo $row['classname'] ?></td>
                                                                 <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?php echo $row['feeid']; ?>"><span class='fas fa-edit'></span>ຈ່າຍເງິນ</button></td>
                                                                 <td>
